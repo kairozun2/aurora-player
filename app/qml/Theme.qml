@@ -64,7 +64,17 @@ QtObject {
     readonly property int radiusPill: 999
 
     // ----------------------------------------------------------------- type --
-    readonly property string fontFamily: fontProbe.name
+    /// The first of these families that is actually installed here. Qt 6 made
+    /// FontLoader.name read-only, so the pick has to happen in this binding.
+    readonly property string fontFamily: {
+        const wanted = ["Inter", "SF Pro Display", "Segoe UI Variable Display",
+                        "Segoe UI", "Noto Sans", "DejaVu Sans"]
+        const available = Qt.fontFamilies()
+        for (let i = 0; i < wanted.length; ++i) {
+            if (available.indexOf(wanted[i]) !== -1) return wanted[i]
+        }
+        return ""
+    }
     readonly property int fontCaption: 13
     readonly property int fontBody: 15
     readonly property int fontBodyLarge: 17
@@ -99,18 +109,5 @@ QtObject {
     function onColor(background) {
         const luminance = 0.299 * background.r + 0.587 * background.g + 0.114 * background.b
         return luminance > 0.55 ? "#1A1A19" : "#FFFFFF"
-    }
-
-    /// Picks the first font that is actually installed on this machine.
-    property FontLoader fontProbe: FontLoader {
-        name: {
-            const wanted = ["Inter", "SF Pro Display", "Segoe UI Variable Display",
-                            "Segoe UI", "Noto Sans", "DejaVu Sans"]
-            const available = Qt.fontFamilies()
-            for (let i = 0; i < wanted.length; ++i) {
-                if (available.indexOf(wanted[i]) !== -1) return wanted[i]
-            }
-            return ""
-        }
     }
 }
