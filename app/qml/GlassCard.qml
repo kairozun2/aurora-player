@@ -1,8 +1,9 @@
 // Aurora Player - frosted glass container.
 //
-// When `backdrop` is set the card really samples and blurs what is behind it
-// (like the floating player bar over the cover art). Without a backdrop it
-// degrades gracefully into a tinted, softly shadowed surface.
+// Drawn with plain Qt Quick primitives only: a rounded, clipped surface with a
+// hairline border and a soft top highlight. No GPU effect module is involved,
+// so the card renders on machines with weak or missing 3D drivers, and a
+// missing effect type can never stop the whole interface from loading.
 import QtQuick
 
 Item {
@@ -18,23 +19,26 @@ Item {
 
     default property alias content: contentHost.data
 
-    // Rounded clipper: everything below inherits the card silhouette.
-    Item {
-        id: clipper
+    // Soft drop shadow, faked with a slightly larger rounded outline: costs
+    // nothing on the GPU and behaves identically on every driver.
+    Rectangle {
+        visible: root.shadow
         anchors.fill: parent
-        layer.enabled: true
-        layer.effect: MultiEffect {
-            maskEnabled: true
-            maskSource: mask
-            maskThresholdMin: 0.5
-            maskSpreadAtMin: 0.35
-        }
+        anchors.margins: -2
+        radius: root.radius + 2
+        color: "transparent"
+        border.width: 2
+        border.color: Qt.rgba(0, 0, 0, root.shadowOpacity * 0.22)
+    }
 
-        // Simple semi-transparent background instead of heavy blur
-        Rectangle {
-            anchors.fill: parent
-            color: root.tint
-        }
+    // The card surface. "clip" gives the rounded silhouette that the mask
+    // effect used to provide.
+    Rectangle {
+        id: surface
+        anchors.fill: parent
+        radius: root.radius
+        color: root.tint
+        clip: true
 
         // Top highlight: the detail that sells the glass look.
         Rectangle {
@@ -49,31 +53,12 @@ Item {
         }
     }
 
-    Rectangle {
-        id: mask
-        anchors.fill: parent
-        radius: root.radius
-        color: "black"
-        visible: false
-        layer.enabled: true
-        layer.smooth: true
-    }
-
-    // Hairline border on top of the content.
+    // Hairline border, drawn on top of the content.
     Rectangle {
         anchors.fill: parent
         radius: root.radius
         color: "transparent"
         border.width: 1
         border.color: root.borderColor
-    }
-
-    layer.enabled: root.shadow
-    layer.effect: MultiEffect {
-        shadowEnabled: true
-        shadowColor: Qt.rgba(0, 0, 0, root.shadowOpacity)
-        shadowBlur: 0.8
-        shadowVerticalOffset: 10
-        blurMax: 40
     }
 }
