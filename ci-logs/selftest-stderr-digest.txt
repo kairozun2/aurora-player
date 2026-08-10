@@ -1,4 +1,4 @@
-source: selftest-stderr.txt  (14463285 bytes)
+source: selftest-stderr.txt  (15481876 bytes)
 --- first 60 lines ---
 Aurora Player 1.0.0 is starting
 the application object was created
@@ -77,8 +77,6 @@ interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] 
 18 x  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:64:13: Unable to assign [undefined] to QString
 18 x  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:21:5: Unable to assign [undefined] to QColor
 --- last 40 lines ---
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
 interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
 [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
 interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
@@ -117,3 +115,5 @@ interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called
 [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
 interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
 [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow

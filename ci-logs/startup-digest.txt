@@ -1,119 +1,119 @@
-source: startup-raw.log  (17168068 bytes)
+source: startup-raw.log  (18376651 bytes)
 --- first 60 lines ---
-2026-08-10T19:26:48  the application object was created
-2026-08-10T19:26:48  the player engine is ready
-2026-08-10T19:26:48  loading the interface
-2026-08-10T19:26:48  [warning] qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-10T19:26:49  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+2026-08-10T19:41:48  the application object was created
+2026-08-10T19:41:48  the player engine is ready
+2026-08-10T19:41:48  loading the interface
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-10T19:41:48  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
 Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T19:26:49  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T19:26:49  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T19:41:48  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T19:41:48  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
 --- the 15 most repeated lines ---
-368 x  2026-08-10T19:26:59  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-368 x  2026-08-10T19:26:59  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-368 x  2026-08-10T19:26:59  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-367 x  2026-08-10T19:26:59  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-364 x  2026-08-10T19:26:56  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-364 x  2026-08-10T19:26:52  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-363 x  2026-08-10T19:26:56  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-363 x  2026-08-10T19:26:56  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-363 x  2026-08-10T19:26:56  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-363 x  2026-08-10T19:26:52  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-363 x  2026-08-10T19:26:52  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-363 x  2026-08-10T19:26:51  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-363 x  2026-08-10T19:26:51  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-363 x  2026-08-10T19:26:52  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-362 x  2026-08-10T19:26:51  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+416 x  2026-08-10T19:41:54  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+416 x  2026-08-10T19:41:54  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+415 x  2026-08-10T19:41:54  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+415 x  2026-08-10T19:41:54  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+413 x  2026-08-10T19:41:58  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+413 x  2026-08-10T19:41:58  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+412 x  2026-08-10T19:41:51  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+412 x  2026-08-10T19:41:51  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+412 x  2026-08-10T19:41:51  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+412 x  2026-08-10T19:41:58  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+412 x  2026-08-10T19:41:58  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+411 x  2026-08-10T19:41:51  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+392 x  2026-08-10T19:41:52  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+391 x  2026-08-10T19:41:52  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+391 x  2026-08-10T19:41:52  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
 --- last 40 lines ---
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-2026-08-10T19:28:18  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
+2026-08-10T19:43:17  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+2026-08-10T19:43:17  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
