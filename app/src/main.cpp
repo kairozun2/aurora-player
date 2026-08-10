@@ -62,7 +62,7 @@ void appendStartupLine(const QString& line) {
         stream << QDateTime::currentDateTime().toString(Qt::ISODate) << QStringLiteral("  ")
                << line << Qt::endl;
     }
-    std::fprintf(stderr, "%s\\n", line.toUtf8().constData());
+    std::fprintf(stderr, "%s\n", line.toUtf8().constData());
 }
 
 void messageHandler(QtMsgType type, const QMessageLogContext&, const QString& text) {
@@ -81,7 +81,7 @@ void reportFatal(const QString& reason) {
     appendStartupLine(QStringLiteral("startup failed: ") + reason);
     if (qEnvironmentVariableIsSet("AURORA_NO_DIALOGS")) return;
 #ifdef _WIN32
-    const QString text = reason + QStringLiteral("\\n\\nA detailed log was written to:\\n")
+    const QString text = reason + QStringLiteral("\n\nA detailed log was written to:\n")
             + QDir::toNativeSeparators(startupLogPath());
     MessageBoxW(nullptr, reinterpret_cast<const wchar_t*>(text.utf16()),
                 L"Aurora Player", MB_OK | MB_ICONERROR);
@@ -123,8 +123,9 @@ int main(int argc, char* argv[]) {
                                  QStringLiteral("Audio files, folders or links to open"));
     parser.process(app);
 
-    aurora::Log::instance().setFile(aurora::Config::logPath());
-    AURORA_LOG_INFO(std::string("Aurora Player ") + AURORA_VERSION_STRING + " starting");
+    aurora::Config bootConfig;
+    aurora::Log::setFile(bootConfig.logPath());
+    aurora::logInfo("app", std::string("Aurora Player ") + AURORA_VERSION_STRING + " starting");
 
     // ---- core + models ----------------------------------------------------
     aurora::LibraryModel libraryModel;
@@ -202,6 +203,6 @@ int main(int argc, char* argv[]) {
 
     const int code = app.exec();
     appendStartupLine(QStringLiteral("Aurora Player is exiting with code %1").arg(code));
-    AURORA_LOG_INFO("Aurora Player exiting");
+    aurora::logInfo("app", "Aurora Player exiting");
     return code;
 }
