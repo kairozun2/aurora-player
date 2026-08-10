@@ -21,40 +21,51 @@ qt_add_executable(aurora-player WIN32 MACOSX_BUNDLE
     src/QtAudioSink.hpp
     ${AURORA_PLATFORM_RESOURCES})
 
-# Theme.qml uses "pragma Singleton". The flag MUST be set before the file is
-# handed to qt_add_qml_module, because the qmldir is generated during that
-# call. Without it Theme is registered as an ordinary component: every
-# "Theme.accent" then resolves to undefined and the whole interface renders
-# unstyled - black text on a white window.
+set(AURORA_QML_FILES
+    qml/Main.qml
+    qml/Theme.qml
+    qml/NowPlayingView.qml
+    qml/LibraryView.qml
+    qml/SettingsView.qml
+    qml/EqualizerPanel.qml
+    qml/QueuePanel.qml
+    qml/LyricsPanel.qml
+    qml/AddMusicDialog.qml
+    qml/PlayerBar.qml
+    qml/CoverFlow.qml
+    qml/NowPlayingVinyl.qml
+    qml/WaveformSeek.qml
+    qml/VolumeControl.qml
+    qml/TrackRow.qml
+    qml/GlassCard.qml
+    qml/IconButton.qml
+    qml/IconGlyph.qml
+    qml/AuroraButton.qml
+    qml/AuroraSwitch.qml
+    qml/SegmentedControl.qml
+    qml/SettingsGroup.qml
+    qml/SettingsRow.qml)
+
+# qt_add_qml_module writes the generated qmldir to the root of the module. If
+# the .qml files themselves stay in a "qml/" subfolder, then every file's
+# implicit directory import sees a plain Theme.qml lying next to it and that
+# shadows the singleton declared in the qmldir: "Theme.accent" resolves to
+# undefined and the entire interface renders unstyled - black text on a white
+# window. Aliasing every file to the module root keeps them next to the qmldir,
+# where the singleton declaration wins.
+foreach(aurora_qml IN LISTS AURORA_QML_FILES)
+    get_filename_component(aurora_qml_name ${aurora_qml} NAME)
+    set_source_files_properties(${aurora_qml} PROPERTIES QT_RESOURCE_ALIAS ${aurora_qml_name})
+endforeach()
+
+# Theme.qml uses "pragma Singleton". The flag has to be set before the module is
+# created, because that is when the qmldir is written.
 set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_qml_module(aurora-player
     URI Aurora
     VERSION 1.0
-    QML_FILES
-        qml/Main.qml
-        qml/Theme.qml
-        qml/NowPlayingView.qml
-        qml/LibraryView.qml
-        qml/SettingsView.qml
-        qml/EqualizerPanel.qml
-        qml/QueuePanel.qml
-        qml/LyricsPanel.qml
-        qml/AddMusicDialog.qml
-        qml/PlayerBar.qml
-        qml/CoverFlow.qml
-        qml/NowPlayingVinyl.qml
-        qml/WaveformSeek.qml
-        qml/VolumeControl.qml
-        qml/TrackRow.qml
-        qml/GlassCard.qml
-        qml/IconButton.qml
-        qml/IconGlyph.qml
-        qml/AuroraButton.qml
-        qml/AuroraSwitch.qml
-        qml/SegmentedControl.qml
-        qml/SettingsGroup.qml
-        qml/SettingsRow.qml)
+    QML_FILES ${AURORA_QML_FILES})
 
 # Dictionaries and the window icon are embedded: one self-contained binary.
 qt_add_resources(aurora-player "aurora_assets"

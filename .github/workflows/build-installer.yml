@@ -137,7 +137,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist-installer | Out-Null
-          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.6-win64-portable.zip -Force
+          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.7-win64-portable.zip -Force
 
       - name: Adjust the installer script
         if: steps.smoketest.outcome == 'success'
@@ -145,7 +145,7 @@ jobs:
         run: |
           $path = "packaging/installer/aurora-player.iss"
           $text = Get-Content $path -Raw
-          $text = $text.Replace(" isreadme", "").Replace("; Tasks: desktopicon", "").Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.6"')
+          $text = $text.Replace(" isreadme", "").Replace("; Tasks: desktopicon", "").Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.7"')
           Set-Content $path $text
           if ($text -match "isreadme") { throw "the readme flag is still present" }
 
@@ -160,18 +160,18 @@ jobs:
         if: steps.smoketest.outcome == 'success'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.6
-          name: Aurora Player 1.0.6
+          tag_name: v1.0.7
+          name: Aurora Player 1.0.7
           make_latest: true
           files: |
-            dist-installer/AuroraPlayer-1.0.6-win64-setup.exe
-            dist-installer/AuroraPlayer-1.0.6-win64-portable.zip
+            dist-installer/AuroraPlayer-1.0.7-win64-setup.exe
+            dist-installer/AuroraPlayer-1.0.7-win64-portable.zip
           body: |
-            Aurora Player 1.0.6 for Windows.
+            Aurora Player 1.0.7 for Windows.
 
             Before these files were uploaded the build server started the
             application itself and waited for the main window to open. The
             upload only happens when that check passes.
 
-            - AuroraPlayer-1.0.6-win64-setup.exe - installer, no administrator rights needed.
-            - AuroraPlayer-1.0.6-win64-portable.zip - unpack anywhere, run aurora-player.exe.
+            - AuroraPlayer-1.0.7-win64-setup.exe - installer, no administrator rights needed.
+            - AuroraPlayer-1.0.7-win64-portable.zip - unpack anywhere, run aurora-player.exe.
