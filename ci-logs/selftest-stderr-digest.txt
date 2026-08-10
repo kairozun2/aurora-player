@@ -1,7 +1,8 @@
-source: selftest-stderr.txt  (760 bytes)
+source: selftest-stderr.txt  (832 bytes)
 --- first 60 lines ---
 Aurora Player 1.0.0 is starting
 the application object was created
+bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
 the player engine is ready
 loading the interface
 [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
@@ -16,6 +17,7 @@ Aurora Player is exiting with code 0
 1 x  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
 1 x  Aurora Player 1.0.0 is starting
 1 x  Aurora Player is exiting with code 0
+1 x  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
 1 x  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
 1 x  loading the interface
 1 x  Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
@@ -26,6 +28,7 @@ Aurora Player is exiting with code 0
 --- last 40 lines ---
 Aurora Player 1.0.0 is starting
 the application object was created
+bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
 the player engine is ready
 loading the interface
 [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal

@@ -80,15 +80,15 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/WaveformSeek_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/VolumeControl_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/TrackRow_qml.cpp
-  All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
   Generating .rcc/qmlcache/aurora-player_qml/GlassCard_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/IconButton_qml.cpp
-  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   Generating .rcc/qmlcache/aurora-player_qml/IconGlyph_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/AuroraButton_qml.cpp
+  All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
   Generating .rcc/qmlcache/aurora-player_qml/AuroraSwitch_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
+  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
   main.cpp
@@ -127,7 +127,7 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
      Creating library D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.lib and object D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.exp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 10554 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 10576 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   aurora-player.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-player.exe
   Building Custom Rule D:/a/aurora-player/aurora-player/CMakeLists.txt
