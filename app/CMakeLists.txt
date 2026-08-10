@@ -6,6 +6,7 @@ set(CMAKE_AUTOMOC ON)
 # for the executable and for every shortcut that points at it.
 set(AURORA_PLATFORM_RESOURCES)
 if(WIN32)
+    enable_language(RC)
     list(APPEND AURORA_PLATFORM_RESOURCES ${CMAKE_SOURCE_DIR}/packaging/icons/aurora.rc)
 endif()
 

@@ -41,7 +41,7 @@ jobs:
         continue-on-error: true
         shell: pwsh
         run: |
-          cmake -S . -B build -G "Visual Studio 17 2022" -A x64 -DAURORA_BUILD_TESTS=OFF 2>&1 | Tee-Object -FilePath ci-logs/configure.txt
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DAURORA_BUILD_GUI=ON -DAURORA_BUILD_CLI=ON -DAURORA_BUILD_TESTS=OFF 2>&1 | Tee-Object -FilePath ci-logs/configure.txt
           if ($LASTEXITCODE -ne 0) { throw "the project could not be configured" }
 
       - name: Compile the project
