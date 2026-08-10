@@ -1,0 +1,13 @@
+Aurora Player 1.0.0 is starting
+the application object was created
+the player engine is ready
+loading the interface
+[warning] qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+[warning] QQmlApplicationEngine failed to load component
+interface: qrc:/qt/qml/Aurora/qml/Main.qml:246:13: Type NowPlayingView unavailable
+interface: qrc:/qt/qml/Aurora/qml/NowPlayingView.qml:86:9: Type GlassCard unavailable
+interface: qrc:/qt/qml/Aurora/qml/GlassCard.qml:26:23: MultiEffect is not a type
+[warning] qrc:/qt/qml/Aurora/qml/Main.qml:246:13: Type NowPlayingView unavailable
+[warning] qrc:/qt/qml/Aurora/qml/NowPlayingView.qml:86:9: Type GlassCard unavailable
+[warning] qrc:/qt/qml/Aurora/qml/GlassCard.qml:26:23: MultiEffect is not a type
+startup failed: The user interface could not be loaded.

@@ -1,0 +1,12 @@
+2026-08-10T18:35:08  the application object was created
+2026-08-10T18:35:08  the player engine is ready
+2026-08-10T18:35:08  loading the interface
+2026-08-10T18:35:09  [warning] qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-10T18:35:09  [warning] QQmlApplicationEngine failed to load component
+2026-08-10T18:35:09  interface: qrc:/qt/qml/Aurora/qml/Main.qml:246:13: Type NowPlayingView unavailable
+2026-08-10T18:35:09  interface: qrc:/qt/qml/Aurora/qml/NowPlayingView.qml:86:9: Type GlassCard unavailable
+2026-08-10T18:35:09  interface: qrc:/qt/qml/Aurora/qml/GlassCard.qml:26:23: MultiEffect is not a type
+2026-08-10T18:35:09  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:246:13: Type NowPlayingView unavailable
+2026-08-10T18:35:09  [warning] qrc:/qt/qml/Aurora/qml/NowPlayingView.qml:86:9: Type GlassCard unavailable
+2026-08-10T18:35:09  [warning] qrc:/qt/qml/Aurora/qml/GlassCard.qml:26:23: MultiEffect is not a type
+2026-08-10T18:35:09  startup failed: The user interface could not be loaded.
