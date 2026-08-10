@@ -102,7 +102,6 @@ jobs:
           }
           Write-Host 'the Qt platform plugin and core libraries are present'
           if (-not (Test-Path dist/i18n)) { Copy-Item -Recurse i18n dist/i18n -Force }
-          Copy-Item README.md dist -Force
           New-Item -ItemType Directory -Force -Path ci-logs | Out-Null
           Get-ChildItem dist -Recurse -File | ForEach-Object { $_.FullName.Substring($distPath.Length + 1) } | Sort-Object | Set-Content ci-logs/dist-listing.txt
           Write-Host "staged files: $((Get-Content ci-logs/dist-listing.txt).Count)"
@@ -120,6 +119,28 @@ jobs:
           git push origin HEAD:main
           exit 0
 
+      - name: Build the portable archive
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist-installer | Out-Null
+          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.2-win64-portable.zip -Force
+          Get-ChildItem dist-installer
+
+      - name: Adjust the installer script
+        shell: pwsh
+        run: |
+          $iss = 'packaging/installer/aurora-player.iss'
+          $text = Get-Content $iss -Raw
+          $original = $text
+          $text = $text.Replace(' isreadme', '')
+          $text = $text.Replace('; Tasks: desktopicon', '')
+          $text = $text.Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.2"')
+          if ($text -eq $original) { throw 'the installer script did not contain the expected entries' }
+          Set-Content -Path $iss -Value $text -NoNewline
+          if ($text -match 'isreadme') { throw 'the readme flag is still present' }
+          if ($text -match 'Tasks: desktopicon') { throw 'the desktop shortcut is still optional' }
+          Write-Host 'the installer no longer opens the readme and always creates a desktop shortcut'
+
       - name: Compile the installer with Inno Setup 6
         shell: pwsh
         run: |
@@ -129,7 +150,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed with exit code $LASTEXITCODE" }
           $setup = Get-ChildItem dist-installer -Filter *.exe | Select-Object -First 1
           if (-not $setup) { throw 'the installer was not produced' }
-          $target = Join-Path $setup.DirectoryName 'AuroraPlayer-1.0.1-win64-setup.exe'
+          $target = Join-Path $setup.DirectoryName 'AuroraPlayer-1.0.2-win64-setup.exe'
           if ($setup.FullName -ne $target) { Move-Item $setup.FullName $target -Force }
           Get-ChildItem dist-installer
 
@@ -137,23 +158,28 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: AuroraPlayer-win64-setup
-          path: dist-installer/*.exe
+          path: dist-installer/*
           if-no-files-found: error
 
       - name: Publish the release with the installer attached
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.1
-          name: Aurora Player 1.0.1
+          tag_name: v1.0.2
+          name: Aurora Player 1.0.2
           make_latest: true
           fail_on_unmatched_files: false
-          files: dist-installer/AuroraPlayer-1.0.1-win64-setup.exe
+          files: |
+            dist-installer/AuroraPlayer-1.0.2-win64-setup.exe
+            dist-installer/AuroraPlayer-1.0.2-win64-portable.zip
           body: |
-            Aurora Player 1.0.1 - music player written in C++17 with a Qt 6 Quick interface.
+            Aurora Player 1.0.2 for Windows.
 
-            This build fixes the startup error "no Qt platform plugin could be initialized":
-            the Qt runtime, including the Windows platform plugin, is now always deployed
-            next to the executable and verified before the installer is compiled.
+            Fixed in this build:
+            - the Qt runtime, including the Windows platform plugin, is always deployed and verified,
+              so the application no longer fails with "no Qt platform plugin could be initialized";
+            - the installer no longer opens README.md in a text editor when it finishes;
+            - the desktop shortcut is always created.
 
-            Windows: download AuroraPlayer-1.0.1-win64-setup.exe and run it.
-            Administrator rights are not required.
+            Two ways to run it:
+            - AuroraPlayer-1.0.2-win64-setup.exe - the installer, no administrator rights needed;
+            - AuroraPlayer-1.0.2-win64-portable.zip - unpack anywhere and run aurora-player.exe.
