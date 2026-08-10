@@ -537,7 +537,6 @@ Qt6QuickLayouts.dll
 Qt6QuickShapes.dll
 Qt6QuickTemplates2.dll
 Qt6Svg.dll
-README.md
 swresample-4.dll
 swscale-7.dll
 tls\qcertonlybackend.dll
