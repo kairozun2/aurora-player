@@ -159,24 +159,30 @@ Item {
                     }
                 }
 
-                Flow {
+                Item {
                     Layout.fillWidth: true
-                    spacing: Theme.spacing2
-                    opacity: root.player && root.player.eqEnabled ? 1.0 : 0.45
+                    Layout.preferredHeight: presetFlow.implicitHeight
 
-                    Behavior on opacity { NumberAnimation { duration: Theme.durationFast } }
+                    Flow {
+                        id: presetFlow
+                        width: parent.width
+                        spacing: Theme.spacing2
+                        opacity: root.player && root.player.eqEnabled ? 1.0 : 0.45
 
-                    Repeater {
-                        model: root.player ? root.player.eqPresets : []
+                        Behavior on opacity { NumberAnimation { duration: Theme.durationFast } }
 
-                        delegate: AuroraButton {
-                            required property string modelData
+                        Repeater {
+                            model: root.player ? root.player.eqPresets : []
 
-                            text: modelData
-                            primary: root.player && root.player.eqPreset === modelData
-                            implicitHeight: 34
-                            enabled: root.player && root.player.eqEnabled
-                            onClicked: if (root.player) root.player.applyPreset(modelData)
+                            delegate: AuroraButton {
+                                required property string modelData
+
+                                text: modelData
+                                primary: root.player && root.player.eqPreset === modelData
+                                implicitHeight: 34
+                                enabled: root.player && root.player.eqEnabled
+                                onClicked: if (root.player) root.player.applyPreset(modelData)
+                            }
                         }
                     }
                 }
