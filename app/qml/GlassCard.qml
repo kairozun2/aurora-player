@@ -4,7 +4,6 @@
 // (like the floating player bar over the cover art). Without a backdrop it
 // degrades gracefully into a tinted, softly shadowed surface.
 import QtQuick
-import QtQuick.Effects
 
 Item {
     id: root
@@ -31,33 +30,7 @@ Item {
             maskSpreadAtMin: 0.35
         }
 
-        // Live, blurred snapshot of whatever sits behind the card.
-        ShaderEffectSource {
-            id: snapshot
-            anchors.fill: parent
-            visible: root.backdrop !== null
-            sourceItem: root.backdrop
-            live: true
-            recursive: false
-            hideSource: false
-            sourceRect: {
-                if (!root.backdrop)
-                    return Qt.rect(0, 0, 0, 0)
-                // Referencing the geometry explicitly keeps this binding live
-                // while the card moves or resizes.
-                var track = root.x + root.y + root.width + root.height
-                var p = root.mapToItem(root.backdrop, 0, 0)
-                return Qt.rect(p.x, p.y, root.width, root.height)
-            }
-            layer.enabled: true
-            layer.effect: MultiEffect {
-                blurEnabled: true
-                blur: root.blurAmount
-                blurMax: 48
-                autoPaddingEnabled: false
-            }
-        }
-
+        // Simple semi-transparent background instead of heavy blur
         Rectangle {
             anchors.fill: parent
             color: root.tint

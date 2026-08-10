@@ -37,7 +37,7 @@ jobs:
       - name: Stage the application into dist\
         shell: pwsh
         run: |
-          cmake --install build --config Release --prefix dist
+          cmake --install build --config Release --prefix "${{ github.workspace }}/dist"
           $exe = Get-ChildItem -Path dist -Recurse -Filter aurora-player.exe -ErrorAction SilentlyContinue | Select-Object -First 1
           if (-not $exe) {
             $built = Get-ChildItem -Path build -Recurse -Filter aurora-player.exe | Select-Object -First 1

@@ -7,7 +7,6 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
-import QtQuick.Effects
 
 ApplicationWindow {
     id: window
@@ -44,15 +43,11 @@ ApplicationWindow {
             visible: false
         }
 
-        MultiEffect {
+        // Simple fade instead of heavy blur - same look, no GPU load
+        Rectangle {
             anchors.fill: parent
-            source: backdropImage
-            blurEnabled: true
-            blur: 1.0
-            blurMax: 64
-            saturation: Theme.dark ? 0.35 : 0.1
-            brightness: Theme.dark ? -0.35 : 0.35
-            opacity: player.coverUrl !== "" ? (Theme.dark ? 0.85 : 0.35) : 0
+            color: Theme.dark ? Theme.canvas : Theme.canvas
+            opacity: player.coverUrl !== "" ? (Theme.dark ? 0.15 : 0.65) : 1.0
 
             Behavior on opacity { NumberAnimation { duration: Theme.durationSlow } }
         }

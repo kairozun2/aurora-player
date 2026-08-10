@@ -4,7 +4,6 @@
 // to the centre one lean back into the scene. Drag, scroll, arrow keys or a
 // click all move the selection; the centre cover is what plays.
 import QtQuick
-import QtQuick.Effects
 
 Item {
     id: root
@@ -137,14 +136,14 @@ Item {
                 }
             }
 
-            // Reflection-ish shadow that grounds the centre cover.
-            layer.enabled: card.isCurrent
-            layer.effect: MultiEffect {
-                shadowEnabled: true
-                shadowColor: Qt.rgba(0, 0, 0, 0.6)
-                shadowBlur: 1.0
-                shadowVerticalOffset: 18
-                blurMax: 64
+            // Simple border instead of heavy shadow
+            Rectangle {
+                anchors.fill: parent
+                radius: Theme.radiusLg
+                color: "transparent"
+                border.width: card.isCurrent ? 2 : 0
+                border.color: Theme.accent
+                visible: card.isCurrent
             }
 
             MouseArea {
