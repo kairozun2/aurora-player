@@ -50,6 +50,7 @@ jobs:
           foreach ($name in @('AuroraButton.qml', 'SettingsView.qml')) {
             if (-not (Test-Path (Join-Path 'app/qml' $name))) { throw "$name is missing" }
           }
+          if (-not (Test-Path packaging/icons/aurora.rc)) { throw 'the Windows icon resource is missing' }
 
       - name: Install Qt 6.7
         uses: jurplel/install-qt-action@v4
@@ -89,7 +90,7 @@ jobs:
           if ($wdq) { $wdqPath = $wdq.Source }
           else {
             $root = $env:QT_ROOT_DIR
-            if (-not $root) { $root = 'C:\' }
+            if (-not $root) { $root = 'C:\\' }
             $found = Get-ChildItem -Path $root -Recurse -Filter windeployqt.exe -ErrorAction SilentlyContinue | Select-Object -First 1
             if (-not $found) { throw 'windeployqt.exe was not found on the runner' }
             $wdqPath = $found.FullName
@@ -106,16 +107,40 @@ jobs:
           Get-ChildItem dist -Recurse -File | ForEach-Object { $_.FullName.Substring($distPath.Length + 1) } | Sort-Object | Set-Content ci-logs/dist-listing.txt
           Write-Host "staged files: $((Get-Content ci-logs/dist-listing.txt).Count)"
 
-      - name: Record the staged file list in the repository
+      - name: Start the application and confirm that it opens
+        id: smoketest
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path ci-logs | Out-Null
+          $env:AURORA_NO_DIALOGS = '1'
+          $env:QT_QPA_PLATFORM = 'offscreen'
+          $exe = (Resolve-Path dist/aurora-player.exe).Path
+          $proc = Start-Process -FilePath $exe -ArgumentList '--selftest' -PassThru -NoNewWindow -RedirectStandardOutput ci-logs/selftest-stdout.txt -RedirectStandardError ci-logs/selftest-stderr.txt
+          if ($proc.WaitForExit(120000)) { $result = "exit code: $($proc.ExitCode)" }
+          else { $proc.Kill(); $result = 'the application did not finish within two minutes' }
+          $result | Set-Content ci-logs/selftest-result.txt
+          Write-Host $result
+          $log = Get-ChildItem $env:APPDATA -Recurse -Filter startup.log -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($log) { Copy-Item $log.FullName ci-logs/startup.log -Force }
+          foreach ($name in @('ci-logs/startup.log', 'ci-logs/selftest-stderr.txt', 'ci-logs/selftest-stdout.txt')) {
+            if (Test-Path $name) {
+              Write-Host "----- $name -----"
+              Get-Content $name -Tail 120
+            }
+          }
+
+      - name: Record the diagnostics in the repository
         if: always()
         continue-on-error: true
         shell: pwsh
         run: |
-          if (-not (Test-Path ci-logs/dist-listing.txt)) { exit 0 }
+          if (-not (Test-Path ci-logs)) { exit 0 }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add ci-logs/dist-listing.txt
-          git commit -m 'CI: record the staged file list'
+          git add -f ci-logs
+          git commit -m 'CI: record the startup diagnostics'
+          git pull --rebase origin main
           git push origin HEAD:main
           exit 0
 
@@ -123,7 +148,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist-installer | Out-Null
-          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.2-win64-portable.zip -Force
+          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.3-win64-portable.zip -Force
           Get-ChildItem dist-installer
 
       - name: Adjust the installer script
@@ -134,7 +159,7 @@ jobs:
           $original = $text
           $text = $text.Replace(' isreadme', '')
           $text = $text.Replace('; Tasks: desktopicon', '')
-          $text = $text.Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.2"')
+          $text = $text.Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.3"')
           if ($text -eq $original) { throw 'the installer script did not contain the expected entries' }
           Set-Content -Path $iss -Value $text -NoNewline
           if ($text -match 'isreadme') { throw 'the readme flag is still present' }
@@ -144,13 +169,13 @@ jobs:
       - name: Compile the installer with Inno Setup 6
         shell: pwsh
         run: |
-          $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'
-          if (-not (Test-Path $iscc)) { $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe' }
-          & $iscc packaging\installer\aurora-player.iss
+          $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\\ISCC.exe'
+          if (-not (Test-Path $iscc)) { $iscc = 'C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe' }
+          & $iscc packaging\\installer\\aurora-player.iss
           if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed with exit code $LASTEXITCODE" }
           $setup = Get-ChildItem dist-installer -Filter *.exe | Select-Object -First 1
           if (-not $setup) { throw 'the installer was not produced' }
-          $target = Join-Path $setup.DirectoryName 'AuroraPlayer-1.0.2-win64-setup.exe'
+          $target = Join-Path $setup.DirectoryName 'AuroraPlayer-1.0.3-win64-setup.exe'
           if ($setup.FullName -ne $target) { Move-Item $setup.FullName $target -Force }
           Get-ChildItem dist-installer
 
@@ -164,22 +189,25 @@ jobs:
       - name: Publish the release with the installer attached
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.2
-          name: Aurora Player 1.0.2
+          tag_name: v1.0.3
+          name: Aurora Player 1.0.3
           make_latest: true
           fail_on_unmatched_files: false
           files: |
-            dist-installer/AuroraPlayer-1.0.2-win64-setup.exe
-            dist-installer/AuroraPlayer-1.0.2-win64-portable.zip
+            dist-installer/AuroraPlayer-1.0.3-win64-setup.exe
+            dist-installer/AuroraPlayer-1.0.3-win64-portable.zip
           body: |
-            Aurora Player 1.0.2 for Windows.
+            Aurora Player 1.0.3 for Windows.
 
-            Fixed in this build:
-            - the Qt runtime, including the Windows platform plugin, is always deployed and verified,
-              so the application no longer fails with "no Qt platform plugin could be initialized";
-            - the installer no longer opens README.md in a text editor when it finishes;
-            - the desktop shortcut is always created.
+            What changed:
+            - the application writes a startup log and shows a dialog when it cannot start,
+              instead of closing silently with no window and no message;
+            - the executable finally carries its own icon, so shortcuts are no longer blank;
+            - the build starts the application before publishing, so a build that cannot open
+              its window is caught here rather than on your machine;
+            - the Qt runtime and the Microsoft compiler runtime are always deployed and verified;
+            - the installer no longer opens README.md and always creates a desktop shortcut.
 
             Two ways to run it:
-            - AuroraPlayer-1.0.2-win64-setup.exe - the installer, no administrator rights needed;
-            - AuroraPlayer-1.0.2-win64-portable.zip - unpack anywhere and run aurora-player.exe.
+            - AuroraPlayer-1.0.3-win64-setup.exe - the installer, no administrator rights needed;
+            - AuroraPlayer-1.0.3-win64-portable.zip - unpack anywhere and run aurora-player.exe.

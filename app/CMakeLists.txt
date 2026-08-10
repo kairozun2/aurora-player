@@ -2,6 +2,13 @@
 qt_standard_project_setup(REQUIRES 6.5)
 set(CMAKE_AUTOMOC ON)
 
+# The Windows icon resource: without it Explorer shows a blank placeholder
+# for the executable and for every shortcut that points at it.
+set(AURORA_PLATFORM_RESOURCES)
+if(WIN32)
+    list(APPEND AURORA_PLATFORM_RESOURCES ${CMAKE_SOURCE_DIR}/packaging/icons/aurora.rc)
+endif()
+
 qt_add_executable(aurora-player WIN32 MACOSX_BUNDLE
     src/main.cpp
     src/PlayerBridge.cpp
@@ -10,7 +17,8 @@ qt_add_executable(aurora-player WIN32 MACOSX_BUNDLE
     src/Models.hpp
     src/CoverImageProvider.hpp
     src/QmlTranslator.hpp
-    src/QtAudioSink.hpp)
+    src/QtAudioSink.hpp
+    ${AURORA_PLATFORM_RESOURCES})
 
 qt_add_qml_module(aurora-player
     URI Aurora
