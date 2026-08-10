@@ -21,6 +21,13 @@ qt_add_executable(aurora-player WIN32 MACOSX_BUNDLE
     src/QtAudioSink.hpp
     ${AURORA_PLATFORM_RESOURCES})
 
+# Theme.qml uses "pragma Singleton". The flag MUST be set before the file is
+# handed to qt_add_qml_module, because the qmldir is generated during that
+# call. Without it Theme is registered as an ordinary component: every
+# "Theme.accent" then resolves to undefined and the whole interface renders
+# unstyled - black text on a white window.
+set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
 qt_add_qml_module(aurora-player
     URI Aurora
     VERSION 1.0
@@ -48,9 +55,6 @@ qt_add_qml_module(aurora-player
         qml/SegmentedControl.qml
         qml/SettingsGroup.qml
         qml/SettingsRow.qml)
-
-# Theme.qml uses "pragma Singleton", so it has to be flagged for the QML module.
-set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 # Dictionaries and the window icon are embedded: one self-contained binary.
 qt_add_resources(aurora-player "aurora_assets"
