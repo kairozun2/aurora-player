@@ -1,1 +1,1 @@
-the application hung and was killed
+FAILED: the application hung and was killed

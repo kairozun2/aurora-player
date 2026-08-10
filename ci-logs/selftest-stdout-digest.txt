@@ -1,0 +1,4 @@
+source: selftest-stdout.txt  (0 bytes)
+--- first 60 lines ---
+--- the 15 most repeated lines ---
+--- last 40 lines ---
