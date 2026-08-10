@@ -3,8 +3,11 @@
 // Deliberately built on Rectangle instead of AbstractButton: `text` and `icon`
 // would shadow AbstractButton's own properties, and a plain Rectangle gives
 // full control over the pill shape, the hover tint and the icon placement.
+//
+// The label uses a plain Row rather than a RowLayout on purpose: a layout
+// defers its own measuring to a later pass, and inside a Flow that turns into
+// an endless measure-reposition loop that pins the CPU at 100%.
 import QtQuick
-import QtQuick.Layouts
 
 Rectangle {
     id: button
@@ -43,7 +46,7 @@ Rectangle {
         NumberAnimation { duration: Theme.durationFast; easing.type: Theme.easeStandard }
     }
 
-    RowLayout {
+    Row {
         id: content
         anchors.centerIn: parent
         spacing: Theme.spacing2
@@ -64,7 +67,6 @@ Rectangle {
             font.family: Theme.fontFamily
             font.pixelSize: Theme.fontBody
             font.weight: Theme.weightMedium
-            elide: Text.ElideRight
         }
     }
 
