@@ -5,8 +5,7 @@ import QtQuick.Controls.Basic
 AbstractButton {
     id: control
 
-    property bool checked: false
-
+    checkable: true
     signal toggled(bool value)
 
     implicitWidth: 48
@@ -38,7 +37,7 @@ AbstractButton {
     }
 
     onClicked: {
-        checked = !checked
+        // checked is toggled automatically by AbstractButton (checkable: true)
         toggled(checked)
     }
 }

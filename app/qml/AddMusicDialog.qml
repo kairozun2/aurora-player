@@ -66,7 +66,7 @@ Item {
                 Item { Layout.fillWidth: true }
 
                 IconButton {
-                    icon: "close"
+                    glyph: "close"
                     variant: "ghost"
                     diameter: 32
                     onClicked: root.open = false
@@ -261,7 +261,7 @@ Item {
                         }
 
                         IconButton {
-                            icon: "close"
+                            glyph: "close"
                             variant: "ghost"
                             diameter: 28
                             visible: !finished && !failed

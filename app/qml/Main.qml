@@ -125,7 +125,7 @@ ApplicationWindow {
                     }
 
                     IconButton {
-                        icon: Theme.dark ? "sun" : "moon"
+                        glyph: Theme.dark ? "sun" : "moon"
                         variant: "ghost"
                         diameter: 34
                         tooltip: Theme.dark ? qsTr("Light theme") : qsTr("Dark theme")

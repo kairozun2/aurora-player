@@ -11,7 +11,7 @@ RowLayout {
     spacing: Theme.spacing2
 
     IconButton {
-        icon: {
+        glyph: {
             if (!root.player || root.player.muted) return "mute"
             return root.player.volume > 0.5 ? "volume" : "volumeLow"
         }

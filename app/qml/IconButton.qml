@@ -8,7 +8,7 @@ import QtQuick.Controls.Basic
 AbstractButton {
     id: control
 
-    property string icon: "play"
+    property string glyph: "play"
     property string variant: "soft"        // ghost | soft | accent
     property int diameter: Theme.iconButton
     property real iconScale: 0.5
@@ -58,7 +58,7 @@ AbstractButton {
             anchors.centerIn: parent
             width: Math.round(control.diameter * control.iconScale)
             height: width
-            name: control.icon
+            name: control.glyph
             color: control.contentColor
             strokeWidth: 1.9 * (24 / Math.max(width, 1)) * (width / 24) * 1.0
         }

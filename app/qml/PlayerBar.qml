@@ -84,7 +84,7 @@ GlassCard {
         }
 
         IconButton {
-            icon: bar.player && bar.player.favorite ? "heartFilled" : "heart"
+            glyph: bar.player && bar.player.favorite ? "heartFilled" : "heart"
             variant: "ghost"
             customColor: bar.player && bar.player.favorite ? Theme.accent : "transparent"
             tooltip: qsTr("Favourite")
@@ -98,7 +98,7 @@ GlassCard {
             Layout.alignment: Qt.AlignVCenter
 
             IconButton {
-                icon: "shuffle"
+                glyph: "shuffle"
                 variant: "ghost"
                 active: bar.player ? bar.player.shuffle : false
                 tooltip: qsTr("Shuffle")
@@ -106,13 +106,13 @@ GlassCard {
             }
 
             IconButton {
-                icon: "prev"
+                glyph: "prev"
                 tooltip: qsTr("Previous")
                 onClicked: if (bar.player) bar.player.previous()
             }
 
             IconButton {
-                icon: bar.player && bar.player.playing ? "pause" : "play"
+                glyph: bar.player && bar.player.playing ? "pause" : "play"
                 variant: "accent"
                 diameter: 52
                 iconScale: 0.46
@@ -121,13 +121,13 @@ GlassCard {
             }
 
             IconButton {
-                icon: "next"
+                glyph: "next"
                 tooltip: qsTr("Next")
                 onClicked: if (bar.player) bar.player.next()
             }
 
             IconButton {
-                icon: bar.player && bar.player.repeatMode === 2 ? "repeatOne" : "repeat"
+                glyph: bar.player && bar.player.repeatMode === 2 ? "repeatOne" : "repeat"
                 variant: "ghost"
                 active: bar.player ? bar.player.repeatMode !== 0 : false
                 tooltip: qsTr("Repeat")
@@ -169,7 +169,7 @@ GlassCard {
 
         // ----------------------------------------------------------- extras --
         IconButton {
-            icon: "lyrics"
+            glyph: "lyrics"
             variant: "ghost"
             active: bar.lyricsOpen
             tooltip: qsTr("Lyrics")
@@ -178,7 +178,7 @@ GlassCard {
         }
 
         IconButton {
-            icon: "list"
+            glyph: "list"
             variant: "ghost"
             active: bar.queueOpen
             tooltip: qsTr("Queue")

@@ -97,7 +97,10 @@ int main(int argc, char* argv[]) {
     // ---- window -----------------------------------------------------------
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed, &app,
                      []() { QCoreApplication::exit(-1); }, Qt::QueuedConnection);
-    engine.loadFromModule("Aurora", "Main");
+    // Put the filesystem qml/ folder first so deployed Qt modules (QtQuick etc.)
+    // take priority over the embedded resource stubs in qrc:/qt-project.org/imports.
+    engine.addImportPath(QGuiApplication::applicationDirPath() + QStringLiteral("/qml"));
+    engine.load(QUrl(QStringLiteral("qrc:/qt/qml/Aurora/qml/Main.qml")));
     if (engine.rootObjects().isEmpty()) {
         std::fprintf(stderr, "Aurora: failed to load the QML interface\n");
         return 3;

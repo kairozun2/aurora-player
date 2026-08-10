@@ -99,7 +99,7 @@ Item {
             }
 
             IconButton {
-                icon: row.favorite ? "heartFilled" : "heart"
+                glyph: row.favorite ? "heartFilled" : "heart"
                 variant: "ghost"
                 diameter: 32
                 opacity: row.favorite || hover.hovered ? 1 : 0
@@ -117,7 +117,7 @@ Item {
             }
 
             IconButton {
-                icon: "plus"
+                glyph: "plus"
                 variant: "ghost"
                 diameter: 32
                 opacity: hover.hovered ? 1 : 0

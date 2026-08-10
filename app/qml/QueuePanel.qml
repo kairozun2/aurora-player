@@ -30,7 +30,7 @@ GlassCard {
             Item { Layout.fillWidth: true }
 
             IconButton {
-                icon: "shuffle"
+                glyph: "shuffle"
                 variant: "ghost"
                 diameter: 32
                 active: panel.player ? panel.player.shuffle : false
@@ -39,7 +39,7 @@ GlassCard {
             }
 
             IconButton {
-                icon: "trash"
+                glyph: "trash"
                 variant: "ghost"
                 diameter: 32
                 tooltip: qsTr("Clear queue")
@@ -170,7 +170,7 @@ GlassCard {
                         }
 
                         IconButton {
-                            icon: "close"
+                            glyph: "close"
                             variant: "ghost"
                             diameter: 26
                             opacity: rowHover.hovered ? 1 : 0

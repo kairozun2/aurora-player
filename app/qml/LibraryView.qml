@@ -67,7 +67,7 @@ Item {
                     }
 
                     IconButton {
-                        icon: "close"
+                        glyph: "close"
                         variant: "ghost"
                         diameter: 26
                         visible: search.text !== ""
@@ -77,14 +77,14 @@ Item {
             }
 
             IconButton {
-                icon: "plus"
+                glyph: "plus"
                 variant: "accent"
                 tooltip: qsTr("Add music")
                 onClicked: root.requestAddMusic()
             }
 
             IconButton {
-                icon: "refresh"
+                glyph: "refresh"
                 tooltip: qsTr("Rescan folders")
                 onClicked: if (root.player) root.player.scan()
             }
@@ -232,7 +232,7 @@ Item {
                                 anchors.right: parent.right
                                 anchors.bottom: parent.bottom
                                 anchors.margins: Theme.spacing2
-                                icon: "play"
+                                glyph: "play"
                                 variant: "accent"
                                 diameter: 38
                                 opacity: albumHover.hovered ? 1 : 0
