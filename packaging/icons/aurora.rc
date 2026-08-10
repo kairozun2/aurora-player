@@ -1,0 +1,3 @@
+// Windows application icon. Without this resource Explorer shows a blank
+// placeholder for aurora-player.exe and for every shortcut pointing at it.
+1 ICON "aurora.ico"
