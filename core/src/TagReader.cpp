@@ -422,12 +422,12 @@ void parseIlst(const Bytes& data, std::size_t begin, std::size_t end, Tags* tags
                 const std::string value(reinterpret_cast<const char*>(data.data() + dataStart),
                                         payload - dataStart);
                 if (name == "\xA9nam") tags->title = str::trim(value);
-                else if (name == "\xA9ART") tags->artist = str::trim(value);
-                else if (name == "\xA9alb") tags->album = str::trim(value);
+                else if (name == "\xA9" "ART") tags->artist = str::trim(value);
+                else if (name == "\xA9" "alb") tags->album = str::trim(value);
                 else if (name == "aART") tags->albumArtist = str::trim(value);
                 else if (name == "\xA9gen") tags->genre = str::trim(value);
-                else if (name == "\xA9day") tags->year = str::trim(value).substr(0, 4);
-                else if (name == "\xA9cmt") tags->comment = str::trim(value);
+                else if (name == "\xA9" "day") tags->year = str::trim(value).substr(0, 4);
+                else if (name == "\xA9" "cmt") tags->comment = str::trim(value);
                 else if (name == "trkn" && value.size() >= 4) {
                     tags->trackNo = static_cast<unsigned char>(value[3]);
                 } else if (name == "disk" && value.size() >= 4) {
