@@ -1,29 +1,29 @@
 MSBuild version 18.8.2+ce25c0108 for .NET Framework
 
   1>Checking Build System
-  Copying qml/Main.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/Main.qml
-  Copying qml/Theme.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/Theme.qml
-  Copying qml/NowPlayingView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/NowPlayingView.qml
-  Copying qml/LibraryView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/LibraryView.qml
-  Copying qml/SettingsView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SettingsView.qml
-  Copying qml/EqualizerPanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/EqualizerPanel.qml
-  Copying qml/QueuePanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/QueuePanel.qml
-  Copying qml/LyricsPanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/LyricsPanel.qml
-  Copying qml/AddMusicDialog.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/AddMusicDialog.qml
-  Copying qml/PlayerBar.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/PlayerBar.qml
-  Copying qml/CoverFlow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/CoverFlow.qml
-  Copying qml/NowPlayingVinyl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/NowPlayingVinyl.qml
-  Copying qml/WaveformSeek.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/WaveformSeek.qml
-  Copying qml/VolumeControl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/VolumeControl.qml
-  Copying qml/TrackRow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/TrackRow.qml
-  Copying qml/GlassCard.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/GlassCard.qml
-  Copying qml/IconButton.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/IconButton.qml
-  Copying qml/IconGlyph.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/IconGlyph.qml
-  Copying qml/AuroraButton.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/AuroraButton.qml
-  Copying qml/AuroraSwitch.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/AuroraSwitch.qml
-  Copying qml/SegmentedControl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SegmentedControl.qml
-  Copying qml/SettingsGroup.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SettingsGroup.qml
-  Copying qml/SettingsRow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SettingsRow.qml
+  Copying qml/Main.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/Main.qml
+  Copying qml/Theme.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/Theme.qml
+  Copying qml/NowPlayingView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/NowPlayingView.qml
+  Copying qml/LibraryView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/LibraryView.qml
+  Copying qml/SettingsView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/SettingsView.qml
+  Copying qml/EqualizerPanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/EqualizerPanel.qml
+  Copying qml/QueuePanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/QueuePanel.qml
+  Copying qml/LyricsPanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/LyricsPanel.qml
+  Copying qml/AddMusicDialog.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/AddMusicDialog.qml
+  Copying qml/PlayerBar.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/PlayerBar.qml
+  Copying qml/CoverFlow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/CoverFlow.qml
+  Copying qml/NowPlayingVinyl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/NowPlayingVinyl.qml
+  Copying qml/WaveformSeek.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/WaveformSeek.qml
+  Copying qml/VolumeControl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/VolumeControl.qml
+  Copying qml/TrackRow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/TrackRow.qml
+  Copying qml/GlassCard.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/GlassCard.qml
+  Copying qml/IconButton.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/IconButton.qml
+  Copying qml/IconGlyph.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/IconGlyph.qml
+  Copying qml/AuroraButton.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/AuroraButton.qml
+  Copying qml/AuroraSwitch.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/AuroraSwitch.qml
+  Copying qml/SegmentedControl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/SegmentedControl.qml
+  Copying qml/SettingsGroup.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/SettingsGroup.qml
+  Copying qml/SettingsRow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/SettingsRow.qml
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
   Running qmlimportscanner for aurora-player
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
@@ -50,9 +50,9 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   aurora_core.vcxproj -> D:\a\aurora-player\aurora-player\build\lib\Release\aurora_core.lib
   Building Custom Rule D:/a/aurora-player/aurora-player/cli/CMakeLists.txt
   1>
-  main.cpp
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
   1>Automatic MOC and UIC for target aurora-player
+  main.cpp
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
   Running AUTOMOC file extraction for target aurora-player
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
@@ -86,12 +86,12 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/AuroraButton_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/AuroraSwitch_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
-  All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
   Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
-  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   main.cpp
+  All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   PlayerBridge.cpp
   Models.cpp
   qrc_qmake_Aurora.cpp
@@ -131,7 +131,7 @@ D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtCore\qmetatype.h(439): warning
 D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtCore\qvariant.h(553): warning C4702: unreachable code [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
 D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtCore\qvariant.h(559): warning C4702: unreachable code [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
 D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtQml\qjsengine.h(111): warning C4702: unreachable code [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
-  All 8753 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 10616 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   aurora-player.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-player.exe
   Building Custom Rule D:/a/aurora-player/aurora-player/CMakeLists.txt
