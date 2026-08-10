@@ -34,9 +34,11 @@
 #include <QSurfaceFormat>
 #include <QTextStream>
 #include <QTimer>
+#include <QWindow>
 
 #ifdef _WIN32
 #  include <windows.h>
+#  include <dwmapi.h>
 #endif
 
 #include <cstdio>
@@ -109,6 +111,25 @@ int main(int argc, char* argv[]) {
     QGuiApplication::setWindowIcon(QIcon(QStringLiteral(":/packaging/icons/aurora.svg")));
     QQuickStyle::setStyle(QStringLiteral("Basic"));
     appendStartupLine(QStringLiteral("the application object was created"));
+
+    // ffmpeg, ffprobe and yt-dlp ship in a "tools" folder next to the binary.
+    // Putting that folder first on PATH means every helper process finds them
+    // without the user installing anything system wide.
+    {
+        const QString toolsDir = QDir::toNativeSeparators(
+                QCoreApplication::applicationDirPath() + QStringLiteral("/tools"));
+        if (QDir(toolsDir).exists()) {
+#ifdef _WIN32
+            const QByteArray separator(";");
+#else
+            const QByteArray separator(":");
+#endif
+            qputenv("PATH", toolsDir.toLocal8Bit() + separator + qgetenv("PATH"));
+            appendStartupLine(QStringLiteral("bundled tools are on PATH: ") + toolsDir);
+        } else {
+            appendStartupLine(QStringLiteral("no bundled tools folder next to the binary"));
+        }
+    }
 
     QCommandLineParser parser;
     parser.setApplicationDescription(QStringLiteral(
@@ -191,6 +212,32 @@ int main(int argc, char* argv[]) {
         return 3;
     }
     appendStartupLine(QStringLiteral("the interface is loaded and the window is open"));
+
+#ifdef _WIN32
+    // Paint the native title bar like the rest of the window, so the frame
+    // stops looking like a white strip glued on top of a dark application.
+    {
+        auto paintTitleBar = [&engine, &bridge]() {
+            const QList<QObject*> roots = engine.rootObjects();
+            if (roots.isEmpty()) return;
+            QWindow* window = qobject_cast<QWindow*>(roots.constFirst());
+            if (window == nullptr) return;
+            const HWND handle = reinterpret_cast<HWND>(window->winId());
+            const BOOL dark = bridge.darkTheme() ? TRUE : FALSE;
+            const COLORREF body = bridge.darkTheme() ? RGB(0x13, 0x11, 0x10)
+                                                     : RGB(0xFF, 0xFF, 0xFF);
+            const COLORREF label = bridge.darkTheme() ? RGB(0xFF, 0xFF, 0xFF)
+                                                      : RGB(0x2C, 0x2C, 0x2B);
+            // 20 dark mode, 34 border, 35 caption background, 36 caption text.
+            DwmSetWindowAttribute(handle, 20, &dark, sizeof(dark));
+            DwmSetWindowAttribute(handle, 34, &body, sizeof(body));
+            DwmSetWindowAttribute(handle, 35, &body, sizeof(body));
+            DwmSetWindowAttribute(handle, 36, &label, sizeof(label));
+        };
+        paintTitleBar();
+        QObject::connect(&bridge, &aurora::PlayerBridge::themeChanged, &app, paintTitleBar);
+    }
+#endif
 
     // Files passed on the command line (also used by "Open with" integrations).
     const QStringList positional = parser.positionalArguments();

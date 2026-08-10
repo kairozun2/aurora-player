@@ -70,6 +70,29 @@ jobs:
           }
           Get-ChildItem dist -Recurse -File | ForEach-Object { $_.FullName.Substring((Resolve-Path dist).Path.Length + 1) } | Sort-Object | Set-Content ci-logs/dist-listing.txt
 
+      - name: Add ffmpeg and yt-dlp next to the application
+        shell: pwsh
+        run: |
+          $tools = "dist/tools"
+          New-Item -ItemType Directory -Force -Path $tools | Out-Null
+          try {
+            Invoke-WebRequest -Uri "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" -OutFile "$tools/yt-dlp.exe" -UseBasicParsing
+            Write-Host "yt-dlp is bundled"
+          } catch {
+            Write-Host "yt-dlp could not be downloaded"
+          }
+          try {
+            $zip = Join-Path $env:RUNNER_TEMP "ffmpeg.zip"
+            $out = Join-Path $env:RUNNER_TEMP "ffmpeg"
+            Invoke-WebRequest -Uri "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-lgpl.zip" -OutFile $zip -UseBasicParsing
+            Expand-Archive -Path $zip -DestinationPath $out -Force
+            Get-ChildItem -Path $out -Recurse -Include ffmpeg.exe, ffprobe.exe | ForEach-Object { Copy-Item $_.FullName -Destination $tools -Force }
+            Write-Host "ffmpeg is bundled"
+          } catch {
+            Write-Host "ffmpeg could not be downloaded"
+          }
+          Get-ChildItem $tools | Select-Object Name, Length | Format-Table | Out-String | Write-Host
+
       - name: Start the application and confirm that it opens
         id: smoketest
         if: steps.deploy.outcome == 'success'
@@ -137,7 +160,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist-installer | Out-Null
-          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.7-win64-portable.zip -Force
+          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.8-win64-portable.zip -Force
 
       - name: Adjust the installer script
         if: steps.smoketest.outcome == 'success'
@@ -145,7 +168,7 @@ jobs:
         run: |
           $path = "packaging/installer/aurora-player.iss"
           $text = Get-Content $path -Raw
-          $text = $text.Replace(" isreadme", "").Replace("; Tasks: desktopicon", "").Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.7"')
+          $text = $text.Replace(" isreadme", "").Replace("; Tasks: desktopicon", "").Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.8"')
           Set-Content $path $text
           if ($text -match "isreadme") { throw "the readme flag is still present" }
 
@@ -160,18 +183,18 @@ jobs:
         if: steps.smoketest.outcome == 'success'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.7
-          name: Aurora Player 1.0.7
+          tag_name: v1.0.8
+          name: Aurora Player 1.0.8
           make_latest: true
           files: |
-            dist-installer/AuroraPlayer-1.0.7-win64-setup.exe
-            dist-installer/AuroraPlayer-1.0.7-win64-portable.zip
+            dist-installer/AuroraPlayer-1.0.8-win64-setup.exe
+            dist-installer/AuroraPlayer-1.0.8-win64-portable.zip
           body: |
-            Aurora Player 1.0.7 for Windows.
+            Aurora Player 1.0.8 for Windows.
 
             Before these files were uploaded the build server started the
             application itself and waited for the main window to open. The
             upload only happens when that check passes.
 
-            - AuroraPlayer-1.0.7-win64-setup.exe - installer, no administrator rights needed.
-            - AuroraPlayer-1.0.7-win64-portable.zip - unpack anywhere, run aurora-player.exe.
+            - AuroraPlayer-1.0.8-win64-setup.exe - installer, no administrator rights needed.
+            - AuroraPlayer-1.0.8-win64-portable.zip - unpack anywhere, run aurora-player.exe.

@@ -87,6 +87,11 @@ target_link_libraries(aurora-player PRIVATE
     Qt6::QuickControls2
     Qt6::Multimedia)
 
+# DwmSetWindowAttribute tints the native title bar to match the window.
+if(WIN32)
+    target_link_libraries(aurora-player PRIVATE dwmapi)
+endif()
+
 target_compile_definitions(aurora-player PRIVATE AURORA_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 
 set_target_properties(aurora-player PROPERTIES
