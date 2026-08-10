@@ -72,17 +72,33 @@ GlassCard {
         }
 
         // ----------------------------------------------------------- presets --
-        Flow {
+        // Positioned by hand for the same reason as the settings page: a Flow
+        // measures its children while the children measure themselves against the
+        // Flow, which makes Qt repeat the layout pass without ever settling.
+        Item {
+            id: presetBox
+
+            readonly property int columnCount: 5
+            readonly property int gap: Theme.spacing2
+            readonly property int cellHeight: 30
+            readonly property int presetCount: panel.player ? panel.player.eqPresets.length : 0
+            readonly property int rowCount: Math.ceil(presetCount / columnCount)
+            readonly property real cellWidth: (width - gap * (columnCount - 1)) / columnCount
+
             Layout.fillWidth: true
-            spacing: Theme.spacing2
+            Layout.preferredHeight: rowCount > 0 ? rowCount * cellHeight + (rowCount - 1) * gap : 0
 
             Repeater {
                 model: panel.player ? panel.player.eqPresets : []
 
                 delegate: AbstractButton {
                     required property string modelData
-                    implicitHeight: 30
-                    implicitWidth: presetLabel.implicitWidth + Theme.spacing4
+                    required property int index
+
+                    width: presetBox.cellWidth
+                    height: presetBox.cellHeight
+                    x: (index % presetBox.columnCount) * (presetBox.cellWidth + presetBox.gap)
+                    y: Math.floor(index / presetBox.columnCount) * (presetBox.cellHeight + presetBox.gap)
                     hoverEnabled: true
                     enabled: panel.player ? panel.player.eqEnabled : false
                     opacity: enabled ? 1 : 0.45
@@ -97,7 +113,6 @@ GlassCard {
                     }
 
                     contentItem: Text {
-                        id: presetLabel
                         text: modelData
                         color: parent.selected ? Theme.accentText : Theme.textSecondary
                         font.family: Theme.fontFamily
@@ -105,6 +120,7 @@ GlassCard {
                         font.weight: Theme.weightMedium
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
+                        elide: Text.ElideRight
                     }
 
                     onClicked: if (panel.player) panel.player.applyPreset(modelData)

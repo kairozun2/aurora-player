@@ -159,30 +159,42 @@ Item {
                     }
                 }
 
+                // The preset buttons are positioned by hand instead of with a Flow.
+                // A positioner measures its children while those children measure
+                // themselves against the positioner, so Qt keeps repeating the layout
+                // pass and the window never finishes opening. Fixed columns plus
+                // arithmetic x/y removes that feedback completely.
                 Item {
+                    id: presetBox
+
+                    readonly property int columnCount: 4
+                    readonly property int gap: Theme.spacing2
+                    readonly property int cellHeight: 34
+                    readonly property int presetCount: root.player ? root.player.eqPresets.length : 0
+                    readonly property int rowCount: Math.ceil(presetCount / columnCount)
+                    readonly property real cellWidth: (width - gap * (columnCount - 1)) / columnCount
+
                     Layout.fillWidth: true
-                    Layout.preferredHeight: presetFlow.implicitHeight
+                    Layout.preferredHeight: rowCount > 0 ? rowCount * cellHeight + (rowCount - 1) * gap : 0
+                    opacity: root.player && root.player.eqEnabled ? 1.0 : 0.45
 
-                    Flow {
-                        id: presetFlow
-                        width: parent.width
-                        spacing: Theme.spacing2
-                        opacity: root.player && root.player.eqEnabled ? 1.0 : 0.45
+                    Behavior on opacity { NumberAnimation { duration: Theme.durationFast } }
 
-                        Behavior on opacity { NumberAnimation { duration: Theme.durationFast } }
+                    Repeater {
+                        model: root.player ? root.player.eqPresets : []
 
-                        Repeater {
-                            model: root.player ? root.player.eqPresets : []
+                        delegate: AuroraButton {
+                            required property string modelData
+                            required property int index
 
-                            delegate: AuroraButton {
-                                required property string modelData
-
-                                text: modelData
-                                primary: root.player && root.player.eqPreset === modelData
-                                implicitHeight: 34
-                                enabled: root.player && root.player.eqEnabled
-                                onClicked: if (root.player) root.player.applyPreset(modelData)
-                            }
+                            text: modelData
+                            primary: root.player && root.player.eqPreset === modelData
+                            enabled: root.player && root.player.eqEnabled
+                            width: presetBox.cellWidth
+                            height: presetBox.cellHeight
+                            x: (index % presetBox.columnCount) * (presetBox.cellWidth + presetBox.gap)
+                            y: Math.floor(index / presetBox.columnCount) * (presetBox.cellHeight + presetBox.gap)
+                            onClicked: if (root.player) root.player.applyPreset(modelData)
                         }
                     }
                 }
