@@ -1,0 +1,136 @@
+MSBuild version 18.8.2+ce25c0108 for .NET Framework
+
+  1>Checking Build System
+  Copying qml/Main.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/Main.qml
+  Copying qml/Theme.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/Theme.qml
+  Copying qml/NowPlayingView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/NowPlayingView.qml
+  Copying qml/LibraryView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/LibraryView.qml
+  Copying qml/SettingsView.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SettingsView.qml
+  Copying qml/EqualizerPanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/EqualizerPanel.qml
+  Copying qml/QueuePanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/QueuePanel.qml
+  Copying qml/LyricsPanel.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/LyricsPanel.qml
+  Copying qml/AddMusicDialog.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/AddMusicDialog.qml
+  Copying qml/PlayerBar.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/PlayerBar.qml
+  Copying qml/CoverFlow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/CoverFlow.qml
+  Copying qml/NowPlayingVinyl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/NowPlayingVinyl.qml
+  Copying qml/WaveformSeek.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/WaveformSeek.qml
+  Copying qml/VolumeControl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/VolumeControl.qml
+  Copying qml/TrackRow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/TrackRow.qml
+  Copying qml/GlassCard.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/GlassCard.qml
+  Copying qml/IconButton.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/IconButton.qml
+  Copying qml/IconGlyph.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/IconGlyph.qml
+  Copying qml/AuroraButton.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/AuroraButton.qml
+  Copying qml/AuroraSwitch.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/AuroraSwitch.qml
+  Copying qml/SegmentedControl.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SegmentedControl.qml
+  Copying qml/SettingsGroup.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SettingsGroup.qml
+  Copying qml/SettingsRow.qml to D:/a/aurora-player/aurora-player/build/app/Aurora/qml/SettingsRow.qml
+  Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
+  Running qmlimportscanner for aurora-player
+  Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
+  Building Custom Rule D:/a/aurora-player/aurora-player/core/CMakeLists.txt
+  Analysis.cpp
+  AudioEngine.cpp
+  Config.cpp
+  Controller.cpp
+  Decoder.cpp
+  Downloader.cpp
+  Equalizer.cpp
+  FfmpegDecoder.cpp
+  I18n.cpp
+  Json.cpp
+  Log.cpp
+  Lyrics.cpp
+  MediaLibrary.cpp
+  Playlist.cpp
+  Process.cpp
+  Sinks.cpp
+  Strings.cpp
+  TagReader.cpp
+  WavDecoder.cpp
+  aurora_core.vcxproj -> D:\a\aurora-player\aurora-player\build\lib\Release\aurora_core.lib
+  Building Custom Rule D:/a/aurora-player/aurora-player/cli/CMakeLists.txt
+  1>
+  Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
+  main.cpp
+  1>Automatic MOC and UIC for target aurora-player
+  Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
+  Running AUTOMOC file extraction for target aurora-player
+  Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
+  Running moc --collect-json for target aurora-player
+  Automatic QML type registration for target aurora-player
+  Running rcc for resource qmake_Aurora
+  Generating .rcc/qmlcache/aurora-player_qmlcache_loader.cpp
+  Running rcc for resource aurora-player_raw_qml_0
+  Running rcc for resource aurora_assets
+  Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
+  Generating .rcc/qmlcache/aurora-player_qml/Main_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/Theme_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/NowPlayingView_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/LibraryView_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/SettingsView_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/EqualizerPanel_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/QueuePanel_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/LyricsPanel_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/AddMusicDialog_qml.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  Generating .rcc/qmlcache/aurora-player_qml/PlayerBar_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/CoverFlow_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/NowPlayingVinyl_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/WaveformSeek_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/VolumeControl_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/TrackRow_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/GlassCard_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/IconButton_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/IconGlyph_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/AuroraButton_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/AuroraSwitch_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
+  All 4661 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  main.cpp
+  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
+D:\a\aurora-player\aurora-player\app\src\main.cpp(126,18): error C2039: 'instance': is not a member of 'aurora::Log' [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
+      D:\a\aurora-player\aurora-player\core\include\aurora\Log.hpp(10,7):
+      see declaration of 'aurora::Log'
+  
+D:\a\aurora-player\aurora-player\app\src\main.cpp(126,18): error C3861: 'instance': identifier not found [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
+D:\a\aurora-player\aurora-player\app\src\main.cpp(126,53): error C2352: 'aurora::Config::logPath': a call of a non-static member function requires an object [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
+      D:\a\aurora-player\aurora-player\core\include\aurora\Config.hpp(76,17):
+      see declaration of 'aurora::Config::logPath'
+  
+D:\a\aurora-player\aurora-player\app\src\main.cpp(127,5): error C3861: 'AURORA_LOG_INFO': identifier not found [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
+D:\a\aurora-player\aurora-player\app\src\main.cpp(205,5): error C3861: 'AURORA_LOG_INFO': identifier not found [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
+  PlayerBridge.cpp
+  Models.cpp
+  qrc_qmake_Aurora.cpp
+  aurora-player_qmlcache_loader.cpp
+  Main_qml.cpp
+  Theme_qml.cpp
+  NowPlayingView_qml.cpp
+  LibraryView_qml.cpp
+  SettingsView_qml.cpp
+  EqualizerPanel_qml.cpp
+  QueuePanel_qml.cpp
+  LyricsPanel_qml.cpp
+  AddMusicDialog_qml.cpp
+  PlayerBar_qml.cpp
+  CoverFlow_qml.cpp
+  NowPlayingVinyl_qml.cpp
+  WaveformSeek_qml.cpp
+  VolumeControl_qml.cpp
+  TrackRow_qml.cpp
+  Compiling...
+  GlassCard_qml.cpp
+  IconButton_qml.cpp
+  IconGlyph_qml.cpp
+  AuroraButton_qml.cpp
+  AuroraSwitch_qml.cpp
+  SegmentedControl_qml.cpp
+  SettingsGroup_qml.cpp
+  SettingsRow_qml.cpp
+  qrc_aurora-player_raw_qml_0.cpp
+  qrc_aurora_assets.cpp
+  mocs_compilation_Release.cpp
