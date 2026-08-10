@@ -79,68 +79,99 @@ jobs:
           $env:AURORA_NO_DIALOGS = "1"
           $env:QT_QPA_PLATFORM = "offscreen"
           $p = Start-Process -FilePath dist/aurora-player.exe -ArgumentList "--selftest" -PassThru -RedirectStandardError ci-logs/selftest-stderr.txt -RedirectStandardOutput ci-logs/selftest-stdout.txt
-          if (-not $p.WaitForExit(120000)) { $p.Kill(); Set-Content ci-logs/selftest-result.txt "the application hung and was killed" }
-          else { Set-Content ci-logs/selftest-result.txt "exit code: $($p.ExitCode)" }
+          $finished = $p.WaitForExit(90000)
+          if (-not $finished) { $p.Kill(); $p.WaitForExit() }
           $log = Join-Path $env:APPDATA "AuroraAudio/Aurora Player/startup.log"
-          if (Test-Path $log) { Copy-Item $log ci-logs/startup.log }
-          Get-Content ci-logs/selftest-result.txt
+          if (Test-Path $log) { Copy-Item $log ci-logs/startup-raw.log }
+          if (-not $finished) {
+            Set-Content ci-logs/selftest-result.txt "FAILED: the application hung and was killed"
+            throw "the application did not finish starting"
+          }
+          $code = $p.ExitCode
+          if ($code -ne 0) {
+            Set-Content ci-logs/selftest-result.txt "FAILED: exit code $code"
+            throw "the application refused to start, exit code $code"
+          }
+          Set-Content ci-logs/selftest-result.txt "PASSED: the window opened and the application exited cleanly"
 
       - name: Record every log in the repository
         if: always()
         continue-on-error: true
         shell: pwsh
         run: |
+          function Write-Digest($source, $target) {
+            if (-not (Test-Path $source)) { return }
+            $info = Get-Item $source
+            $lines = Get-Content $source -TotalCount 20000
+            $out = New-Object System.Collections.Generic.List[string]
+            $out.Add("source: " + $info.Name + "  (" + $info.Length + " bytes)")
+            $out.Add("--- first 60 lines ---")
+            foreach ($l in ($lines | Select-Object -First 60)) { $out.Add($l) }
+            $out.Add("--- the 15 most repeated lines ---")
+            $groups = $lines | Group-Object | Sort-Object Count -Descending | Select-Object -First 15
+            foreach ($g in $groups) { $out.Add(($g.Count.ToString() + " x  " + $g.Name)) }
+            $out.Add("--- last 40 lines ---")
+            foreach ($l in (Get-Content $source -Tail 40)) { $out.Add($l) }
+            Set-Content $target $out
+          }
+          Write-Digest "ci-logs/startup-raw.log" "ci-logs/startup-digest.txt"
+          Write-Digest "ci-logs/selftest-stderr.txt" "ci-logs/selftest-stderr-digest.txt"
+          Write-Digest "ci-logs/selftest-stdout.txt" "ci-logs/selftest-stdout-digest.txt"
+          foreach ($raw in @("ci-logs/startup-raw.log", "ci-logs/selftest-stderr.txt", "ci-logs/selftest-stdout.txt", "ci-logs/startup.log")) {
+            if (Test-Path $raw) { Remove-Item $raw -Force }
+          }
           foreach ($big in @("configure", "compile", "deploy")) {
             $file = "ci-logs/$big.txt"
             if (Test-Path $file) { Get-Content $file -Tail 150 | Set-Content "ci-logs/$big-tail.txt"; Remove-Item $file }
           }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f ci-logs
+          git add -A -f ci-logs
           if (-not (git status --porcelain)) { exit 0 }
           git commit -m "CI: record the build and startup logs"
           git pull --rebase origin main
           git push origin HEAD:main
 
       - name: Build the portable archive
-        if: steps.deploy.outcome == 'success'
+        if: steps.smoketest.outcome == 'success'
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist-installer | Out-Null
-          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.4-win64-portable.zip -Force
+          Compress-Archive -Path dist/* -DestinationPath dist-installer/AuroraPlayer-1.0.5-win64-portable.zip -Force
 
       - name: Adjust the installer script
-        if: steps.deploy.outcome == 'success'
+        if: steps.smoketest.outcome == 'success'
         shell: pwsh
         run: |
           $path = "packaging/installer/aurora-player.iss"
           $text = Get-Content $path -Raw
-          $text = $text.Replace(" isreadme", "").Replace("; Tasks: desktopicon", "").Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.4"')
+          $text = $text.Replace(" isreadme", "").Replace("; Tasks: desktopicon", "").Replace('#define MyAppVersion "1.0.0"', '#define MyAppVersion "1.0.5"')
           Set-Content $path $text
           if ($text -match "isreadme") { throw "the readme flag is still present" }
 
       - name: Compile the installer
-        if: steps.deploy.outcome == 'success'
+        if: steps.smoketest.outcome == 'success'
         shell: pwsh
         run: |
           & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" packaging/installer/aurora-player.iss
           Get-ChildItem dist-installer
 
       - name: Publish the release
-        if: steps.deploy.outcome == 'success'
+        if: steps.smoketest.outcome == 'success'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.4
-          name: Aurora Player 1.0.4
+          tag_name: v1.0.5
+          name: Aurora Player 1.0.5
           make_latest: true
           files: |
-            dist-installer/AuroraPlayer-1.0.4-win64-setup.exe
-            dist-installer/AuroraPlayer-1.0.4-win64-portable.zip
+            dist-installer/AuroraPlayer-1.0.5-win64-setup.exe
+            dist-installer/AuroraPlayer-1.0.5-win64-portable.zip
           body: |
-            Aurora Player 1.0.4 for Windows.
+            Aurora Player 1.0.5 for Windows.
 
-            The build server now starts the application itself before publishing,
-            so a build that cannot open its window never reaches this page.
+            Before these files were uploaded the build server started the
+            application itself and waited for the main window to open. The
+            upload only happens when that check passes.
 
-            - AuroraPlayer-1.0.4-win64-setup.exe - installer, no administrator rights needed.
-            - AuroraPlayer-1.0.4-win64-portable.zip - unpack anywhere, run aurora-player.exe.
+            - AuroraPlayer-1.0.5-win64-setup.exe - installer, no administrator rights needed.
+            - AuroraPlayer-1.0.5-win64-portable.zip - unpack anywhere, run aurora-player.exe.
