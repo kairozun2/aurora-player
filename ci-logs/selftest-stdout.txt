@@ -1,8 +1,0 @@
-18:35:08.815 [INFO ] app: Aurora Player 1.0.0 starting
-18:35:08.815 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-18:35:08.819 [INFO ] download: worker pool started (2)
-18:35:08.936 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-18:35:08.939 [INFO ] download: worker pool started (2)
-18:35:08.940 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-18:35:08.940 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-18:35:08.941 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
