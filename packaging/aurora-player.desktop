@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Aurora Player
+GenericName=Music Player
+GenericName[ru]=Музыкальный плеер
+Comment=Offline and online music player with equalizer, lyrics and downloads
+Comment[ru]=Музыкальный плеер офлайн и онлайн с эквалайзером, текстами и загрузками
+Exec=aurora-player %F
+TryExec=aurora-player
+Icon=aurora-player
+Terminal=false
+Categories=AudioVideo;Audio;Player;Music;Qt;
+Keywords=music;audio;player;mp3;flac;youtube;equalizer;
+Keywords[ru]=музыка;аудио;плеер;треки;эквалайзер;
+MimeType=audio/mpeg;audio/mp4;audio/flac;audio/ogg;audio/x-wav;audio/wav;audio/opus;audio/aac;audio/x-m4a;audio/x-vorbis+ogg;application/x-mpegurl;
+StartupNotify=true
+StartupWMClass=aurora-player

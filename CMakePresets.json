@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "release",
+      "displayName": "Release (GUI + CLI + tests)",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "core-only",
+      "displayName": "Core + CLI only (no Qt needed)",
+      "binaryDir": "${sourceDir}/build/core",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "AURORA_BUILD_GUI": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "release", "configurePreset": "release" },
+    { "name": "debug", "configurePreset": "debug" },
+    { "name": "core-only", "configurePreset": "core-only" }
+  ],
+  "testPresets": [
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}

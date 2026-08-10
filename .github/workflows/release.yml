@@ -1,0 +1,111 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    name: Package (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt 6.7
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.7.2'
+          modules: 'qtmultimedia'
+          cache: true
+      - name: Linux dev packages
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libpulse-dev libgl1-mesa-dev fuse
+      - name: Build
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --config Release --parallel
+          cmake --install build --prefix dist
+      - name: Windows bundle
+        if: runner.os == 'Windows'
+        run: |
+          windeployqt --qmldir app/qml dist/bin/aurora-player.exe
+          Compress-Archive -Path dist/* -DestinationPath aurora-player-windows-x64.zip
+      - name: macOS bundle
+        if: runner.os == 'macOS'
+        run: |
+          macdeployqt dist/aurora-player.app -qmldir=app/qml -dmg || true
+          mv dist/aurora-player.dmg aurora-player-macos.dmg 2>/dev/null || \
+            (cd dist && zip -r ../aurora-player-macos.zip . )
+      - name: Linux tarball
+        if: runner.os == 'Linux'
+        run: tar czf aurora-player-linux-x64.tar.gz -C dist .
+      - name: Attach to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: Aurora Player 1.0.0
+          make_latest: true
+          files: |
+            aurora-player-windows-x64.zip
+            aurora-player-macos.dmg
+            aurora-player-macos.zip
+            aurora-player-linux-x64.tar.gz
+          fail_on_unmatched_files: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  windows-installer:
+    name: Windows installer (.exe)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt 6.7
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.7.2'
+          modules: 'qtmultimedia'
+          cache: true
+      - name: Build and deploy
+        shell: pwsh
+        run: |
+          cmake -S . -B build-win -DCMAKE_BUILD_TYPE=Release -DAURORA_BUILD_GUI=ON -DAURORA_BUILD_CLI=ON
+          cmake --build build-win --config Release --parallel
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          $exe = Get-ChildItem -Path build-win -Recurse -Filter aurora-player.exe | Select-Object -First 1
+          Copy-Item $exe.FullName dist
+          $cli = Get-ChildItem -Path build-win -Recurse -Filter aurora-cli.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($cli) { Copy-Item $cli.FullName dist }
+          windeployqt --qmldir app/qml --release --no-translations dist/aurora-player.exe
+          Copy-Item -Recurse i18n dist/i18n -Force
+      - name: Compile installer (Inno Setup 6)
+        shell: pwsh
+        run: |
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" packaging\installer\aurora-player.iss
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AuroraPlayer-win64-setup
+          path: dist-installer/*.exe
+          if-no-files-found: error
+      - name: Attach installer to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: Aurora Player 1.0.0
+          make_latest: true
+          files: dist-installer/AuroraPlayer-1.0.0-win64-setup.exe
+          fail_on_unmatched_files: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

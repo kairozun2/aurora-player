@@ -1,0 +1,31 @@
+# Build output
+build/
+build-*/
+out/
+cmake-build-*/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Qt / CMake
+CMakeCache.txt
+CMakeFiles/
+*.cmake.in.copy
+.qt/
+*_qmlcache.qrc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Runtime data (never commit someone's library or music)
+aurora-demo-render.wav
+*.log

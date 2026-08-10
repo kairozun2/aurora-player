@@ -1,0 +1,3 @@
+{
+  "_comment": "English is the source language: strings are used as written in the code. This file exists so translators can copy it to a new locale (for example de.json) and fill in the right-hand side. Aurora loads i18n/<code>.json at runtime, no Qt tooling required."
+}

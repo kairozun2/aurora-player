@@ -1,0 +1,82 @@
+name: Windows installer
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  installer:
+    name: Build setup.exe
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt 6.7
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.7.2'
+          host: windows
+          target: desktop
+          arch: win64_msvc2019_64
+          modules: 'qtmultimedia'
+          cache: true
+
+      - name: Configure
+        shell: pwsh
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DAURORA_BUILD_GUI=ON -DAURORA_BUILD_CLI=ON -DAURORA_BUILD_TESTS=OFF
+
+      - name: Build
+        shell: pwsh
+        run: cmake --build build --config Release --parallel
+
+      - name: Stage the application into dist\
+        shell: pwsh
+        run: |
+          cmake --install build --config Release --prefix dist
+          $exe = Get-ChildItem -Path dist -Recurse -Filter aurora-player.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $exe) {
+            $built = Get-ChildItem -Path build -Recurse -Filter aurora-player.exe | Select-Object -First 1
+            if (-not $built) { throw 'aurora-player.exe was not produced by the build' }
+            New-Item -ItemType Directory -Force -Path dist | Out-Null
+            Copy-Item $built.FullName dist -Force
+            windeployqt --qmldir app/qml --release --no-translations dist/aurora-player.exe
+          } elseif ($exe.DirectoryName -ne (Resolve-Path dist).Path) {
+            Copy-Item (Join-Path $exe.DirectoryName '*') dist -Recurse -Force
+          }
+          if (-not (Test-Path dist/i18n)) { Copy-Item -Recurse i18n dist/i18n -Force }
+          Copy-Item README.md dist -Force
+          Get-ChildItem dist
+
+      - name: Compile the installer with Inno Setup 6
+        shell: pwsh
+        run: |
+          $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'
+          if (-not (Test-Path $iscc)) { $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe' }
+          & $iscc packaging\installer\aurora-player.iss
+          Get-ChildItem dist-installer
+
+      - name: Upload the installer as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AuroraPlayer-win64-setup
+          path: dist-installer/*.exe
+          if-no-files-found: error
+
+      - name: Publish the release with the installer attached
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: Aurora Player 1.0.0
+          make_latest: true
+          fail_on_unmatched_files: false
+          files: dist-installer/AuroraPlayer-1.0.0-win64-setup.exe
+          body: |
+            Aurora Player 1.0.0 - music player written in C++17 with a Qt 6 Quick interface.
+
+            Windows: download AuroraPlayer-1.0.0-win64-setup.exe and run it.
+            Administrator rights are not required.
