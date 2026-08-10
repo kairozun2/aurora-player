@@ -1,0 +1,159 @@
+name: Build Windows installer
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  installer:
+    name: Build and publish setup.exe
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Report that the run has started
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          New-Item -ItemType Directory -Force -Path .ci | Out-Null
+          "the installer workflow started at $(Get-Date -Format u)" | Set-Content .ci/last-run.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .ci/last-run.txt
+          git commit -m 'CI beacon: the installer workflow started'
+          git push origin HEAD:main
+          exit 0
+
+      - name: Import the project source from the public repository
+        shell: pwsh
+        run: |
+          if (Test-Path core/src/AudioEngine.cpp) {
+            Write-Host 'Source already present, skipping the import'
+          }
+          else {
+            git clone --depth 1 https://github.com/skaisayyy/ewfest.git source
+            robocopy source . /E /XD .git /XF AuroraButton.qml SettingsView.qml /NFL /NDL /NJH /NJS /NP
+            if ($LASTEXITCODE -ge 8) { throw "robocopy failed with exit code $LASTEXITCODE" }
+            Remove-Item source -Recurse -Force
+          }
+          exit 0
+
+      - name: Check the UI file set
+        shell: pwsh
+        run: |
+          Write-Host "QML files: $((Get-ChildItem app/qml -Filter *.qml).Count)"
+          foreach ($name in @('AuroraButton.qml', 'SettingsView.qml')) {
+            if (-not (Test-Path (Join-Path 'app/qml' $name))) { throw "$name is missing" }
+          }
+
+      - name: Install Qt 6.7
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.7.2'
+          host: windows
+          target: desktop
+          arch: win64_msvc2019_64
+          modules: 'qtmultimedia'
+          cache: true
+
+      - name: Configure
+        shell: pwsh
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DAURORA_BUILD_GUI=ON -DAURORA_BUILD_CLI=ON -DAURORA_BUILD_TESTS=OFF
+
+      - name: Build
+        shell: pwsh
+        run: cmake --build build --config Release --parallel
+
+      - name: Stage the application and deploy the Qt runtime
+        shell: pwsh
+        run: |
+          if (Test-Path dist) { Remove-Item dist -Recurse -Force }
+          cmake --install build --config Release --prefix dist
+          $distPath = (Resolve-Path dist).Path
+          $exe = Get-ChildItem -Path dist -Recurse -Filter aurora-player.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $exe) {
+            $built = Get-ChildItem -Path build -Recurse -Filter aurora-player.exe | Select-Object -First 1
+            if (-not $built) { throw 'aurora-player.exe was not produced by the build' }
+            Copy-Item $built.FullName dist -Force
+          }
+          elseif ($exe.DirectoryName -ne $distPath) {
+            Copy-Item (Join-Path $exe.DirectoryName '*') dist -Recurse -Force
+          }
+          if (-not (Test-Path dist/aurora-player.exe)) { throw 'aurora-player.exe is not at the root of dist' }
+          $wdq = Get-Command windeployqt -ErrorAction SilentlyContinue
+          if ($wdq) { $wdqPath = $wdq.Source }
+          else {
+            $root = $env:QT_ROOT_DIR
+            if (-not $root) { $root = 'C:\' }
+            $found = Get-ChildItem -Path $root -Recurse -Filter windeployqt.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+            if (-not $found) { throw 'windeployqt.exe was not found on the runner' }
+            $wdqPath = $found.FullName
+          }
+          Write-Host "using windeployqt at $wdqPath"
+          & $wdqPath --release --no-translations --compiler-runtime --qmldir app/qml (Join-Path $distPath 'aurora-player.exe')
+          if ($LASTEXITCODE -ne 0) { throw "windeployqt failed with exit code $LASTEXITCODE" }
+          foreach ($required in @('platforms/qwindows.dll', 'Qt6Core.dll', 'Qt6Gui.dll', 'Qt6Quick.dll')) {
+            if (-not (Test-Path (Join-Path 'dist' $required))) { throw "the deployed runtime is incomplete: $required is missing" }
+          }
+          Write-Host 'the Qt platform plugin and core libraries are present'
+          if (-not (Test-Path dist/i18n)) { Copy-Item -Recurse i18n dist/i18n -Force }
+          Copy-Item README.md dist -Force
+          New-Item -ItemType Directory -Force -Path ci-logs | Out-Null
+          Get-ChildItem dist -Recurse -File | ForEach-Object { $_.FullName.Substring($distPath.Length + 1) } | Sort-Object | Set-Content ci-logs/dist-listing.txt
+          Write-Host "staged files: $((Get-Content ci-logs/dist-listing.txt).Count)"
+
+      - name: Record the staged file list in the repository
+        if: always()
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          if (-not (Test-Path ci-logs/dist-listing.txt)) { exit 0 }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ci-logs/dist-listing.txt
+          git commit -m 'CI: record the staged file list'
+          git push origin HEAD:main
+          exit 0
+
+      - name: Compile the installer with Inno Setup 6
+        shell: pwsh
+        run: |
+          $iscc = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'
+          if (-not (Test-Path $iscc)) { $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe' }
+          & $iscc packaging\installer\aurora-player.iss
+          if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed with exit code $LASTEXITCODE" }
+          $setup = Get-ChildItem dist-installer -Filter *.exe | Select-Object -First 1
+          if (-not $setup) { throw 'the installer was not produced' }
+          $target = Join-Path $setup.DirectoryName 'AuroraPlayer-1.0.1-win64-setup.exe'
+          if ($setup.FullName -ne $target) { Move-Item $setup.FullName $target -Force }
+          Get-ChildItem dist-installer
+
+      - name: Upload the installer as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AuroraPlayer-win64-setup
+          path: dist-installer/*.exe
+          if-no-files-found: error
+
+      - name: Publish the release with the installer attached
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.1
+          name: Aurora Player 1.0.1
+          make_latest: true
+          fail_on_unmatched_files: false
+          files: dist-installer/AuroraPlayer-1.0.1-win64-setup.exe
+          body: |
+            Aurora Player 1.0.1 - music player written in C++17 with a Qt 6 Quick interface.
+
+            This build fixes the startup error "no Qt platform plugin could be initialized":
+            the Qt runtime, including the Windows platform plugin, is now always deployed
+            next to the executable and verified before the installer is compiled.
+
+            Windows: download AuroraPlayer-1.0.1-win64-setup.exe and run it.
+            Administrator rights are not required.
