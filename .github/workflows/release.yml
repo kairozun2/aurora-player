@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-13]
     steps:
       - uses: actions/checkout@v4
       - name: Install Qt 6.7
@@ -36,21 +36,21 @@ jobs:
         run: |
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
           cmake --build build --config Release --parallel
-          cmake --install build --prefix dist
+          cmake --install build --prefix "${{ github.workspace }}/dist"
       - name: Windows bundle
         if: runner.os == 'Windows'
         run: |
-          windeployqt --qmldir app/qml dist/bin/aurora-player.exe
-          Compress-Archive -Path dist/* -DestinationPath aurora-player-windows-x64.zip
+          windeployqt --qmldir app/qml "${{ github.workspace }}/dist/bin/aurora-player.exe"
+          Compress-Archive -Path "${{ github.workspace }}/dist/*" -DestinationPath aurora-player-windows-x64.zip
       - name: macOS bundle
         if: runner.os == 'macOS'
         run: |
-          macdeployqt dist/aurora-player.app -qmldir=app/qml -dmg || true
-          mv dist/aurora-player.dmg aurora-player-macos.dmg 2>/dev/null || \
-            (cd dist && zip -r ../aurora-player-macos.zip . )
+          macdeployqt "${{ github.workspace }}/dist/aurora-player.app" -qmldir=app/qml -dmg || true
+          mv "${{ github.workspace }}/dist/aurora-player.dmg" aurora-player-macos.dmg 2>/dev/null || \
+            (cd "${{ github.workspace }}/dist" && zip -r ../aurora-player-macos.zip . )
       - name: Linux tarball
         if: runner.os == 'Linux'
-        run: tar czf aurora-player-linux-x64.tar.gz -C dist .
+        run: tar czf aurora-player-linux-x64.tar.gz -C "${{ github.workspace }}/dist" .
       - name: Attach to release
         uses: softprops/action-gh-release@v2
         with:
