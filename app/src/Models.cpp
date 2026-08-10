@@ -57,13 +57,13 @@ void LibraryModel::refresh() {
             rows_ = library_->tracks();
             // Artist / album / track order reads far better than file order.
             std::sort(rows_.begin(), rows_.end(), [](const Track& a, const Track& b) {
-                const std::string aa = Strings::toLower(a.displayArtist());
-                const std::string ba = Strings::toLower(b.displayArtist());
+                const std::string aa = str::toLower(a.displayArtist());
+                const std::string ba = str::toLower(b.displayArtist());
                 if (aa != ba) return aa < ba;
-                if (a.album != b.album) return Strings::toLower(a.album) < Strings::toLower(b.album);
+                if (a.album != b.album) return str::toLower(a.album) < str::toLower(b.album);
                 if (a.discNo != b.discNo) return a.discNo < b.discNo;
                 if (a.trackNo != b.trackNo) return a.trackNo < b.trackNo;
-                return Strings::toLower(a.displayTitle()) < Strings::toLower(b.displayTitle());
+                return str::toLower(a.displayTitle()) < str::toLower(b.displayTitle());
             });
         }
     }
@@ -89,7 +89,7 @@ QVariant LibraryModel::data(const QModelIndex& index, int role) const {
     case FavoriteRole: return t.favorite;
     case PathRole: return QString::fromStdString(t.path.empty() ? t.sourceUrl : t.path);
     case TrackIdRole: return QString::fromStdString(t.id);
-    case YearRole: return t.year;
+    case YearRole: return QString::fromStdString(t.year);
     case GenreRole: return QString::fromStdString(t.genre);
     case PlayCountRole: return t.playCount;
     default: return QVariant();
@@ -180,8 +180,8 @@ QVariant AlbumModel::data(const QModelIndex& index, int role) const {
                 QString::fromStdString(album.name + "|" + album.artist));
         return QStringLiteral("image://covers/") + QString::fromUtf8(seed);
     }
-    case TrackCountRole: return album.trackCount;
-    case YearRole: return album.year;
+    case TrackCountRole: return static_cast<int>(album.trackCount);
+    case YearRole: return QString::fromStdString(album.year);
     case DurationTextRole: return formatDuration(album.durationSec);
     default: return QVariant();
     }

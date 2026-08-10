@@ -47,8 +47,8 @@ int main(int argc, char* argv[]) {
                                  QStringLiteral("Audio files, folders or links to open"));
     parser.process(app);
 
-    aurora::Log::instance().setFile(aurora::Config::logPath());
-    AURORA_LOG_INFO(std::string("Aurora Player ") + AURORA_VERSION_STRING + " starting");
+    aurora::Log::setFile(aurora::Config().logPath());
+    aurora::logInfo("main", std::string("Aurora Player ") + AURORA_VERSION_STRING + " starting");
 
     // ---- core + models ----------------------------------------------------
     aurora::LibraryModel libraryModel;
@@ -108,6 +108,6 @@ int main(int argc, char* argv[]) {
     for (const QString& argument : positional) bridge.addPath(argument);
 
     const int code = app.exec();
-    AURORA_LOG_INFO("Aurora Player exiting");
+    aurora::logInfo("main", "Aurora Player exiting");
     return code;
 }
