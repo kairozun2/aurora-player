@@ -1,4 +1,4 @@
-source: selftest-stderr.txt  (15481876 bytes)
+source: selftest-stderr.txt  (15635085 bytes)
 --- first 60 lines ---
 Aurora Player 1.0.0 is starting
 the application object was created
@@ -61,10 +61,10 @@ interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] 
 [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
 interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
 --- the 15 most repeated lines ---
-4558 x  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-4558 x  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-4557 x  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-4557 x  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+4558 x  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+4558 x  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+4557 x  interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+4557 x  [warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
 18 x  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:25:5: Unable to assign [undefined] to double
 18 x  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:49:9: Unable to assign [undefined] to double
 18 x  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:56:13: Unable to assign [undefined] to double
@@ -77,43 +77,43 @@ interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] 
 18 x  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:64:13: Unable to assign [undefined] to QString
 18 x  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:21:5: Unable to assign [undefined] to QColor
 --- last 40 lines ---
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: possible QQuickItem::polish() loop
-interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
-[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:162:17: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: Flow called polish() inside updatePolish() of Flow
+interface: qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
+[warning] qrc:/qt/qml/Aurora/qml/SettingsView.qml:166:21: QML Flow: possible QQuickItem::polish() loop
