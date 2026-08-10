@@ -91,7 +91,7 @@ QtObject {
     readonly property int easeEmphasis: Easing.OutBack
 
     /// Same colour with a different alpha - handy for hover overlays.
-    function alpha(base, a) {
+    readonly property var alpha: function (base, a) {
         return Qt.rgba(base.r, base.g, base.b, a)
     }
 
