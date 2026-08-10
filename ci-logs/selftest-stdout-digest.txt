@@ -1,28 +1,31 @@
-source: selftest-stdout.txt  (618 bytes)
+source: selftest-stdout.txt  (667 bytes)
 --- first 60 lines ---
-21:50:30.691 [INFO ] app: Aurora Player 1.0.0 starting
-21:50:30.692 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-21:50:30.695 [INFO ] download: worker pool started (2)
-21:50:31.042 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-21:50:31.045 [INFO ] download: worker pool started (2)
-21:50:31.045 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-21:50:31.045 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-21:50:31.148 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+21:58:58.423 [INFO ] app: Aurora Player 1.0.0 starting
+21:58:58.424 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+21:58:58.429 [INFO ] download: worker pool started (2)
+21:58:58.525 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+21:58:58.529 [INFO ] download: worker pool started (2)
+21:58:58.530 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
+21:58:58.530 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
+21:58:58.531 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+21:59:00.476 [INFO ] app: Aurora Player exiting
 --- the 15 most repeated lines ---
-1 x  21:50:30.691 [INFO ] app: Aurora Player 1.0.0 starting
-1 x  21:50:30.692 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-1 x  21:50:30.695 [INFO ] download: worker pool started (2)
-1 x  21:50:31.042 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-1 x  21:50:31.045 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-1 x  21:50:31.045 [INFO ] download: worker pool started (2)
-1 x  21:50:31.045 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-1 x  21:50:31.148 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+1 x  21:58:58.423 [INFO ] app: Aurora Player 1.0.0 starting
+1 x  21:58:58.424 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+1 x  21:58:58.429 [INFO ] download: worker pool started (2)
+1 x  21:58:58.525 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+1 x  21:58:58.529 [INFO ] download: worker pool started (2)
+1 x  21:58:58.530 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
+1 x  21:58:58.530 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
+1 x  21:58:58.531 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+1 x  21:59:00.476 [INFO ] app: Aurora Player exiting
 --- last 40 lines ---
-21:50:30.691 [INFO ] app: Aurora Player 1.0.0 starting
-21:50:30.692 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-21:50:30.695 [INFO ] download: worker pool started (2)
-21:50:31.042 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-21:50:31.045 [INFO ] download: worker pool started (2)
-21:50:31.045 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-21:50:31.045 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-21:50:31.148 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+21:58:58.423 [INFO ] app: Aurora Player 1.0.0 starting
+21:58:58.424 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+21:58:58.429 [INFO ] download: worker pool started (2)
+21:58:58.525 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+21:58:58.529 [INFO ] download: worker pool started (2)
+21:58:58.530 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
+21:58:58.530 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
+21:58:58.531 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+21:59:00.476 [INFO ] app: Aurora Player exiting

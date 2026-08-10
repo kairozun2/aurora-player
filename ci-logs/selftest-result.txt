@@ -1,1 +1,1 @@
-FAILED: exit code 3
+PASSED: the window opened and the application exited cleanly

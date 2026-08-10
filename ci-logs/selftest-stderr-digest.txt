@@ -1,40 +1,37 @@
-source: selftest-stderr.txt  (738 bytes)
+source: selftest-stderr.txt  (760 bytes)
 --- first 60 lines ---
 Aurora Player 1.0.0 is starting
 the application object was created
 the player engine is ready
 loading the interface
-[warning] QQmlApplicationEngine failed to load component
-interface: qrc:/qt/qml/Aurora/Main.qml:105:25: Type IconGlyph unavailable
-interface: qrc:/qt/qml/Aurora/IconGlyph.qml: Type Theme unavailable
-interface: qrc:/qt/qml/Aurora/Theme.qml:106:15: Invalid property assignment: "name" is a read-only property
-[warning] qrc:/qt/qml/Aurora/Main.qml:105:25: Type IconGlyph unavailable
-[warning] qrc:/qt/qml/Aurora/IconGlyph.qml: Type Theme unavailable
-[warning] qrc:/qt/qml/Aurora/Theme.qml:106:15: Invalid property assignment: "name" is a read-only property
-startup failed: The user interface could not be loaded.
+[warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+[warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+the interface is loaded and the window is open
+self test: the application started correctly
+interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+Aurora Player is exiting with code 0
 --- the 15 most repeated lines ---
-1 x  [warning] QQmlApplicationEngine failed to load component
-1 x  [warning] qrc:/qt/qml/Aurora/IconGlyph.qml: Type Theme unavailable
-1 x  [warning] qrc:/qt/qml/Aurora/Main.qml:105:25: Type IconGlyph unavailable
-1 x  [warning] qrc:/qt/qml/Aurora/Theme.qml:106:15: Invalid property assignment: "name" is a read-only property
+1 x  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+1 x  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
 1 x  Aurora Player 1.0.0 is starting
-1 x  interface: qrc:/qt/qml/Aurora/IconGlyph.qml: Type Theme unavailable
-1 x  interface: qrc:/qt/qml/Aurora/Main.qml:105:25: Type IconGlyph unavailable
-1 x  interface: qrc:/qt/qml/Aurora/Theme.qml:106:15: Invalid property assignment: "name" is a read-only property
+1 x  Aurora Player is exiting with code 0
+1 x  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
 1 x  loading the interface
-1 x  startup failed: The user interface could not be loaded.
+1 x  Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+1 x  self test: the application started correctly
 1 x  the application object was created
+1 x  the interface is loaded and the window is open
 1 x  the player engine is ready
 --- last 40 lines ---
 Aurora Player 1.0.0 is starting
 the application object was created
 the player engine is ready
 loading the interface
-[warning] QQmlApplicationEngine failed to load component
-interface: qrc:/qt/qml/Aurora/Main.qml:105:25: Type IconGlyph unavailable
-interface: qrc:/qt/qml/Aurora/IconGlyph.qml: Type Theme unavailable
-interface: qrc:/qt/qml/Aurora/Theme.qml:106:15: Invalid property assignment: "name" is a read-only property
-[warning] qrc:/qt/qml/Aurora/Main.qml:105:25: Type IconGlyph unavailable
-[warning] qrc:/qt/qml/Aurora/IconGlyph.qml: Type Theme unavailable
-[warning] qrc:/qt/qml/Aurora/Theme.qml:106:15: Invalid property assignment: "name" is a read-only property
-startup failed: The user interface could not be loaded.
+[warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+[warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+the interface is loaded and the window is open
+self test: the application started correctly
+interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+Aurora Player is exiting with code 0
