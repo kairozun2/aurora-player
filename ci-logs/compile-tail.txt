@@ -71,8 +71,8 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/EqualizerPanel_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/QueuePanel_qml.cpp
   Generating code
-  Previous IPDB not found, fall back to full compilation.
   Generating .rcc/qmlcache/aurora-player_qml/LyricsPanel_qml.cpp
+  Previous IPDB not found, fall back to full compilation.
   Generating .rcc/qmlcache/aurora-player_qml/AddMusicDialog_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/PlayerBar_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/CoverFlow_qml.cpp
@@ -85,12 +85,12 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/IconGlyph_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/AuroraButton_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/AuroraSwitch_qml.cpp
-  All 4661 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
+  All 4661 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
-  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
+  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   main.cpp
   PlayerBridge.cpp
   Models.cpp
@@ -131,7 +131,7 @@ D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtCore\qmetatype.h(439): warning
 D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtCore\qvariant.h(553): warning C4702: unreachable code [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
 D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtCore\qvariant.h(559): warning C4702: unreachable code [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
 D:\a\aurora-player\Qt\6.7.2\msvc2019_64\include\QtQml\qjsengine.h(111): warning C4702: unreachable code [D:\a\aurora-player\aurora-player\build\app\aurora-player.vcxproj]
-  All 8675 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 8670 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   aurora-player.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-player.exe
   Building Custom Rule D:/a/aurora-player/aurora-player/CMakeLists.txt
