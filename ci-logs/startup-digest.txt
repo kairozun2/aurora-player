@@ -1,119 +1,119 @@
 source: startup-raw.log  (212647 bytes)
 --- first 60 lines ---
-2026-08-10T21:18:54  the application object was created
-2026-08-10T21:18:54  the player engine is ready
-2026-08-10T21:18:54  loading the interface
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-10T21:18:54  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+2026-08-10T21:38:52  the application object was created
+2026-08-10T21:38:52  the player engine is ready
+2026-08-10T21:38:52  loading the interface
+2026-08-10T21:38:52  [warning] qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-10T21:38:52  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
 Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
-2026-08-10T21:18:54  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
-2026-08-10T21:18:54  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:52  interface: qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
+2026-08-10T21:38:52  [warning] qrc:/qt/qml/Aurora/qml/IconButton.qml:49:9: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:169:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:175:37: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:178:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:177:37: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:176:37: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:153:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:162:33: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:164:40: Unable to assign [undefined] to double
 --- the 15 most repeated lines ---
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:67:13: Unable to assign [undefined] to QString
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:60:13: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:59:13: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:52:9: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:69:13: Unable to assign [undefined] to int
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:68:13: Unable to assign [undefined] to int
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:67:13: Unable to assign [undefined] to QString
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:68:13: Unable to assign [undefined] to int
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:60:13: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:52:9: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:28:5: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:28:5: Unable to assign [undefined] to double
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:24:5: Unable to assign [undefined] to QColor
-18 x  2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:24:5: Unable to assign [undefined] to QColor
-18 x  2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:59:13: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:69:13: Unable to assign [undefined] to int
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:68:13: Unable to assign [undefined] to int
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:67:13: Unable to assign [undefined] to QString
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:60:13: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:52:9: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:24:5: Unable to assign [undefined] to QColor
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:69:13: Unable to assign [undefined] to int
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:28:5: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:28:5: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:68:13: Unable to assign [undefined] to int
+18 x  2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraButton.qml:59:13: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:52:9: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:59:13: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:60:13: Unable to assign [undefined] to double
+18 x  2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AuroraButton.qml:67:13: Unable to assign [undefined] to QString
 --- last 40 lines ---
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:176:17: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:176:17: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:177:17: Unable to assign [undefined] to QString
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:177:17: Unable to assign [undefined] to QString
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:185:17: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:185:17: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:196:17: Unable to assign [undefined] to double
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:196:17: Unable to assign [undefined] to double
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:52:13: Unable to assign [undefined] to double
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:52:13: Unable to assign [undefined] to double
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:346:9: Unable to assign [undefined] to double
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:346:9: Unable to assign [undefined] to double
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:359:13: Unable to assign [undefined] to int
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:359:13: Unable to assign [undefined] to int
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:358:13: Unable to assign [undefined] to int
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:358:13: Unable to assign [undefined] to int
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:357:13: Unable to assign [undefined] to QString
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:357:13: Unable to assign [undefined] to QString
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:399:13: Unable to assign [undefined] to double
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:399:13: Unable to assign [undefined] to double
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:396: TypeError: Property 'alpha' of object [object Object] is not a function
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:396: TypeError: Property 'alpha' of object [object Object] is not a function
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:404:17: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:404:17: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:407:17: Unable to assign [undefined] to int
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:407:17: Unable to assign [undefined] to int
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:406:17: Unable to assign [undefined] to int
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:406:17: Unable to assign [undefined] to int
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:405:17: Unable to assign [undefined] to QString
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:405:17: Unable to assign [undefined] to QString
-2026-08-10T21:18:55  interface: qrc:/qt/qml/Aurora/qml/Main.qml:398:13: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:398:13: Unable to assign [undefined] to QColor
-2026-08-10T21:18:55  the interface is loaded and the window is open
-2026-08-10T21:18:55  self test: the application started correctly
-2026-08-10T21:18:56  interface: qrc:/qt/qml/Aurora/qml/Main.qml:362:49: Unable to assign [undefined] to int
-2026-08-10T21:18:56  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:362:49: Unable to assign [undefined] to int
-2026-08-10T21:18:56  interface: qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-10T21:18:56  interface: qrc:/qt/qml/Aurora/qml/Main.qml:347:9: Unable to assign [undefined] to QColor
-2026-08-10T21:18:56  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:347:9: Unable to assign [undefined] to QColor
-2026-08-10T21:18:57  Aurora Player is exiting with code 0
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:176:17: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:176:17: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:177:17: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:177:17: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:185:17: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:185:17: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:196:17: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:196:17: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:52:13: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/AddMusicDialog.qml:52:13: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:346:9: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:346:9: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:359:13: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:359:13: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:358:13: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:358:13: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:357:13: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:357:13: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:399:13: Unable to assign [undefined] to double
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:399:13: Unable to assign [undefined] to double
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:396: TypeError: Property 'alpha' of object [object Object] is not a function
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:396: TypeError: Property 'alpha' of object [object Object] is not a function
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:404:17: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:404:17: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:407:17: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:407:17: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:406:17: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:406:17: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:405:17: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:405:17: Unable to assign [undefined] to QString
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:398:13: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:398:13: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  the interface is loaded and the window is open
+2026-08-10T21:38:53  self test: the application started correctly
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:362:49: Unable to assign [undefined] to int
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:362:49: Unable to assign [undefined] to int
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-10T21:38:53  interface: qrc:/qt/qml/Aurora/qml/Main.qml:347:9: Unable to assign [undefined] to QColor
+2026-08-10T21:38:53  [warning] qrc:/qt/qml/Aurora/qml/Main.qml:347:9: Unable to assign [undefined] to QColor
+2026-08-10T21:38:55  Aurora Player is exiting with code 0
