@@ -4,6 +4,7 @@
 // waveform scrubber, lyrics/queue toggles and volume.
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 
 GlassCard {
     id: bar
@@ -40,11 +41,28 @@ GlassCard {
                 clip: true
 
                 Image {
+                    id: coverMaskSource
                     anchors.fill: parent
                     source: bar.player ? bar.player.coverUrl : ""
                     fillMode: Image.PreserveAspectCrop
                     asynchronous: true
                     cache: true
+                    visible: false
+                }
+
+                Rectangle {
+                    id: coverMask
+                    anchors.fill: parent
+                    radius: parent.radius
+                    visible: false
+                    layer.enabled: true
+                }
+
+                MultiEffect {
+                    anchors.fill: parent
+                    source: coverMaskSource
+                    maskEnabled: true
+                    maskSource: coverMask
                 }
             }
 
@@ -84,7 +102,7 @@ GlassCard {
         }
 
         IconButton {
-            glyph: bar.player && bar.player.favorite ? "heartFilled" : "heart"
+            icon: bar.player && bar.player.favorite ? "heartFilled" : "heart"
             variant: "ghost"
             customColor: bar.player && bar.player.favorite ? Theme.accent : "transparent"
             tooltip: qsTr("Favourite")
@@ -98,7 +116,7 @@ GlassCard {
             Layout.alignment: Qt.AlignVCenter
 
             IconButton {
-                glyph: "shuffle"
+                icon: "shuffle"
                 variant: "ghost"
                 active: bar.player ? bar.player.shuffle : false
                 tooltip: qsTr("Shuffle")
@@ -106,13 +124,13 @@ GlassCard {
             }
 
             IconButton {
-                glyph: "prev"
+                icon: "prev"
                 tooltip: qsTr("Previous")
                 onClicked: if (bar.player) bar.player.previous()
             }
 
             IconButton {
-                glyph: bar.player && bar.player.playing ? "pause" : "play"
+                icon: bar.player && bar.player.playing ? "pause" : "play"
                 variant: "accent"
                 diameter: 52
                 iconScale: 0.46
@@ -121,13 +139,13 @@ GlassCard {
             }
 
             IconButton {
-                glyph: "next"
+                icon: "next"
                 tooltip: qsTr("Next")
                 onClicked: if (bar.player) bar.player.next()
             }
 
             IconButton {
-                glyph: bar.player && bar.player.repeatMode === 2 ? "repeatOne" : "repeat"
+                icon: bar.player && bar.player.repeatMode === 2 ? "repeatOne" : "repeat"
                 variant: "ghost"
                 active: bar.player ? bar.player.repeatMode !== 0 : false
                 tooltip: qsTr("Repeat")
@@ -169,7 +187,7 @@ GlassCard {
 
         // ----------------------------------------------------------- extras --
         IconButton {
-            glyph: "lyrics"
+            icon: "lyrics"
             variant: "ghost"
             active: bar.lyricsOpen
             tooltip: qsTr("Lyrics")
@@ -178,7 +196,7 @@ GlassCard {
         }
 
         IconButton {
-            glyph: "list"
+            icon: "list"
             variant: "ghost"
             active: bar.queueOpen
             tooltip: qsTr("Queue")
