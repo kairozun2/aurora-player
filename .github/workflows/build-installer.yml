@@ -51,7 +51,11 @@ jobs:
         shell: pwsh
         run: |
           cmake --build build --config Release --parallel 2>&1 | Tee-Object -FilePath ci-logs/compile.txt
-          if ($LASTEXITCODE -ne 0) { throw "the project could not be compiled" }
+          if ($LASTEXITCODE -ne 0) {
+            Select-String -Path ci-logs/compile.txt -Pattern "error", "fatal" | Select-Object -First 40 |
+                ForEach-Object { $_.Line } | Set-Content ci-logs/compile-errors.txt
+            throw "the project could not be compiled"
+          }
 
       - name: Collect the runtime next to the executable
         id: deploy
@@ -71,6 +75,7 @@ jobs:
           Get-ChildItem dist -Recurse -File | ForEach-Object { $_.FullName.Substring((Resolve-Path dist).Path.Length + 1) } | Sort-Object | Set-Content ci-logs/dist-listing.txt
 
       - name: Add ffmpeg and yt-dlp next to the application
+        if: steps.deploy.outcome == 'success'
         shell: pwsh
         run: |
           $tools = "dist/tools"
@@ -119,7 +124,7 @@ jobs:
           }
           Set-Content ci-logs/selftest-result.txt "PASSED: the window opened and the application exited cleanly"
 
-      - name: Record every log in the repository
+      - name: Record every log on the ci-logs branch
         if: always()
         continue-on-error: true
         shell: pwsh
@@ -151,11 +156,10 @@ jobs:
           }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B ci-logs
           git add -A -f ci-logs
-          if (-not (git status --porcelain)) { exit 0 }
           git commit -m "CI: record the build and startup logs"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git push -f origin ci-logs
 
       - name: Build the portable archive
         if: steps.smoketest.outcome == 'success'
