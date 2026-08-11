@@ -24,6 +24,9 @@ platforms\qwindows.dll
 qml\Qt\labs\folderlistmodel\plugins.qmltypes
 qml\Qt\labs\folderlistmodel\qmldir
 qml\Qt\labs\folderlistmodel\qmlfolderlistmodelplugin.dll
+qml\QtCore\plugins.qmltypes
+qml\QtCore\qmldir
+qml\QtCore\qtqmlcoreplugin.dll
 qml\QtQml\Base\plugins.qmltypes
 qml\QtQml\Base\qmldir
 qml\QtQml\Base\qmlplugin.dll
@@ -498,6 +501,7 @@ Qt6Multimedia.dll
 Qt6Network.dll
 Qt6OpenGL.dll
 Qt6Qml.dll
+Qt6QmlCore.dll
 Qt6QmlModels.dll
 Qt6QmlWorkerScript.dll
 Qt6Quick.dll

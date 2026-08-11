@@ -1,7 +1,3 @@
-ScrollIndicator.qml is up to date.
-ScrollView.qml is up to date.
-SelectionRectangle.qml is up to date.
-Slider.qml is up to date.
 SpinBox.qml is up to date.
 SplitView.qml is up to date.
 StackView.qml is up to date.
@@ -148,3 +144,7 @@ SwitchIndicator.qml is up to date.
 Updating effectsplugin.dll.
 plugins.qmltypes is up to date.
 qmldir is up to date.
+Creating D:/a/aurora-player/aurora-player/dist/qml/QtCore.
+Updating qtqmlcoreplugin.dll.
+Updating plugins.qmltypes.
+Updating qmldir.

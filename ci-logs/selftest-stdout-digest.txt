@@ -1,31 +1,31 @@
 source: selftest-stdout.txt  (667 bytes)
 --- first 60 lines ---
-14:04:48.934 [INFO ] app: Aurora Player 1.0.0 starting
-14:04:48.935 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-14:04:48.939 [INFO ] download: worker pool started (2)
-14:04:49.224 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-14:04:49.226 [INFO ] download: worker pool started (2)
-14:04:49.226 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-14:04:49.227 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-14:04:49.228 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
-14:04:51.084 [INFO ] app: Aurora Player exiting
+16:49:50.277 [INFO ] app: Aurora Player 1.0.0 starting
+16:49:50.278 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+16:49:50.286 [INFO ] download: worker pool started (2)
+16:49:50.415 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+16:49:50.419 [INFO ] download: worker pool started (2)
+16:49:50.419 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
+16:49:50.420 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
+16:49:50.421 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+16:49:52.357 [INFO ] app: Aurora Player exiting
 --- the 15 most repeated lines ---
-1 x  14:04:48.934 [INFO ] app: Aurora Player 1.0.0 starting
-1 x  14:04:48.935 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-1 x  14:04:48.939 [INFO ] download: worker pool started (2)
-1 x  14:04:49.224 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-1 x  14:04:49.226 [INFO ] download: worker pool started (2)
-1 x  14:04:49.226 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-1 x  14:04:49.227 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-1 x  14:04:49.228 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
-1 x  14:04:51.084 [INFO ] app: Aurora Player exiting
+1 x  16:49:50.277 [INFO ] app: Aurora Player 1.0.0 starting
+1 x  16:49:50.278 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+1 x  16:49:50.286 [INFO ] download: worker pool started (2)
+1 x  16:49:50.415 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+1 x  16:49:50.419 [INFO ] download: worker pool started (2)
+1 x  16:49:50.419 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
+1 x  16:49:50.420 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
+1 x  16:49:50.421 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+1 x  16:49:52.357 [INFO ] app: Aurora Player exiting
 --- last 40 lines ---
-14:04:48.934 [INFO ] app: Aurora Player 1.0.0 starting
-14:04:48.935 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-14:04:48.939 [INFO ] download: worker pool started (2)
-14:04:49.224 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
-14:04:49.226 [INFO ] download: worker pool started (2)
-14:04:49.226 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
-14:04:49.227 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
-14:04:49.228 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
-14:04:51.084 [INFO ] app: Aurora Player exiting
+16:49:50.277 [INFO ] app: Aurora Player 1.0.0 starting
+16:49:50.278 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+16:49:50.286 [INFO ] download: worker pool started (2)
+16:49:50.415 [INFO ] config: using defaults (cannot open C:\Users\runneradmin\AppData\Roaming\AuroraPlayer\settings.json)
+16:49:50.419 [INFO ] download: worker pool started (2)
+16:49:50.419 [INFO ] engine: started with sink 'null' at 48000 Hz / 2 ch
+16:49:50.420 [INFO ] controller: Aurora Player 1.0.0 ready (0 tracks)
+16:49:50.421 [INFO ] library: scan done: +0 ~0 -0 (0.00s)
+16:49:52.357 [INFO ] app: Aurora Player exiting
