@@ -441,6 +441,7 @@ qml\QtQuick\Dialogs\quickimpl\qml\PickerHandle.qml
 qml\QtQuick\Dialogs\quickimpl\qml\SaturationLightnessPicker.qml
 qml\QtQuick\Dialogs\quickimpl\qmldir
 qml\QtQuick\Dialogs\quickimpl\qtquickdialogs2quickimplplugin.dll
+qml\QtQuick\Effects\effectsplugin.dll
 qml\QtQuick\Effects\plugins.qmltypes
 qml\QtQuick\Effects\qmldir
 qml\QtQuick\Layouts\plugins.qmltypes
@@ -516,6 +517,7 @@ Qt6QuickControls2WindowsStyleImpl.dll
 Qt6QuickDialogs2.dll
 Qt6QuickDialogs2QuickImpl.dll
 Qt6QuickDialogs2Utils.dll
+Qt6QuickEffects.dll
 Qt6QuickLayouts.dll
 Qt6QuickShapes.dll
 Qt6QuickTemplates2.dll

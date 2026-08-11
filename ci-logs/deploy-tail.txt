@@ -1,6 +1,3 @@
-RangeSlider.qml is up to date.
-RoundButton.qml is up to date.
-ScrollBar.qml is up to date.
 ScrollIndicator.qml is up to date.
 ScrollView.qml is up to date.
 SelectionRectangle.qml is up to date.
@@ -148,3 +145,6 @@ Updating qtquickcontrols2windowsstyleimplplugin.dll.
 qmldir is up to date.
 QuickControls2WindowsStyleImpl.qmltypes is up to date.
 SwitchIndicator.qml is up to date.
+Updating effectsplugin.dll.
+plugins.qmltypes is up to date.
+qmldir is up to date.

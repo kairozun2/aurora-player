@@ -49,8 +49,8 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   WavDecoder.cpp
   aurora_core.vcxproj -> D:\a\aurora-player\aurora-player\build\lib\Release\aurora_core.lib
   Building Custom Rule D:/a/aurora-player/aurora-player/cli/CMakeLists.txt
-  1>
   main.cpp
+  1>
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
   1>Automatic MOC and UIC for target aurora-player
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
@@ -71,11 +71,11 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/EqualizerPanel_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/QueuePanel_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/LyricsPanel_qml.cpp
-  Generating code
   Generating .rcc/qmlcache/aurora-player_qml/AddMusicDialog_qml.cpp
-  Previous IPDB not found, fall back to full compilation.
   Generating .rcc/qmlcache/aurora-player_qml/PlayerBar_qml.cpp
+  Generating code
   Generating .rcc/qmlcache/aurora-player_qml/CoverFlow_qml.cpp
+  Previous IPDB not found, fall back to full compilation.
   Generating .rcc/qmlcache/aurora-player_qml/NowPlayingVinyl_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/WaveformSeek_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/VolumeControl_qml.cpp
@@ -88,9 +88,9 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
+  main.cpp
   All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  main.cpp
   aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
   PlayerBridge.cpp
   Models.cpp
@@ -127,7 +127,7 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
      Creating library D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.lib and object D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.exp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 10567 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 10512 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   aurora-player.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-player.exe
   Building Custom Rule D:/a/aurora-player/aurora-player/CMakeLists.txt
