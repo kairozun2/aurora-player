@@ -4,6 +4,7 @@
 // track plays, exactly like the reference design. Everything is drawn with
 // gradients, so no artwork is needed for the disc itself.
 import QtQuick
+import QtQuick.Effects
 
 Item {
     id: root
@@ -98,11 +99,28 @@ Item {
         clip: true
 
         Image {
+            id: sleeveSource
             anchors.fill: parent
             source: root.coverUrl
             fillMode: Image.PreserveAspectCrop
             asynchronous: true
             cache: true
+            visible: false
+        }
+
+        Rectangle {
+            id: sleeveMask
+            anchors.fill: parent
+            radius: parent.radius
+            visible: false
+            layer.enabled: true
+        }
+
+        MultiEffect {
+            anchors.fill: parent
+            source: sleeveSource
+            maskEnabled: true
+            maskSource: sleeveMask
         }
 
         // Sleeve spine highlight.
