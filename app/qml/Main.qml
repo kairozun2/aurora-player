@@ -7,6 +7,7 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
+import QtQuick.Effects
 
 ApplicationWindow {
     id: window
@@ -43,11 +44,15 @@ ApplicationWindow {
             visible: false
         }
 
-        // Simple fade instead of heavy blur - same look, no GPU load
-        Rectangle {
+        MultiEffect {
             anchors.fill: parent
-            color: Theme.dark ? Theme.canvas : Theme.canvas
-            opacity: player.coverUrl !== "" ? (Theme.dark ? 0.15 : 0.65) : 1.0
+            source: backdropImage
+            blurEnabled: true
+            blur: 1.0
+            blurMax: 64
+            saturation: Theme.dark ? 0.35 : 0.1
+            brightness: Theme.dark ? -0.35 : 0.35
+            opacity: player.coverUrl !== "" ? (Theme.dark ? 0.85 : 0.35) : 0
 
             Behavior on opacity { NumberAnimation { duration: Theme.durationSlow } }
         }
@@ -93,23 +98,6 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     spacing: Theme.spacing3
 
-                    Rectangle {
-                        width: 34
-                        height: 34
-                        radius: 12
-                        gradient: Gradient {
-                            GradientStop { position: 0.0; color: Theme.accent }
-                            GradientStop { position: 1.0; color: Qt.darker(Theme.accent, 1.5) }
-                        }
-
-                        IconGlyph {
-                            anchors.centerIn: parent
-                            width: 19; height: 19
-                            name: "disc"
-                            color: Theme.accentText
-                        }
-                    }
-
                     Text {
                         Layout.fillWidth: true
                         text: "Aurora"
@@ -120,7 +108,7 @@ ApplicationWindow {
                     }
 
                     IconButton {
-                        glyph: Theme.dark ? "sun" : "moon"
+                        icon: Theme.dark ? "sun" : "moon"
                         variant: "ghost"
                         diameter: 34
                         tooltip: Theme.dark ? qsTr("Light theme") : qsTr("Dark theme")
