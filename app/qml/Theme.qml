@@ -39,8 +39,8 @@ QtObject {
     readonly property color success: "#46A758"
 
     // ---------------------------------------------------------------- glass --
-    readonly property color glass: dark ? Qt.rgba(0.11, 0.10, 0.09, 0.62)
-                                       : Qt.rgba(1, 1, 1, 0.72)
+    readonly property color glass: dark ? Qt.rgba(0.11, 0.10, 0.09, 0.97)
+                                       : Qt.rgba(1, 1, 1, 0.98)
     readonly property color glassBorder: dark ? Qt.rgba(1, 1, 1, 0.16)
                                               : Qt.rgba(0, 0, 0, 0.08)
     readonly property color shadow: dark ? Qt.rgba(0, 0, 0, 0.55) : Qt.rgba(0, 0, 0, 0.16)
