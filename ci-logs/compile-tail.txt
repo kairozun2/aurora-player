@@ -49,8 +49,8 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   WavDecoder.cpp
   aurora_core.vcxproj -> D:\a\aurora-player\aurora-player\build\lib\Release\aurora_core.lib
   Building Custom Rule D:/a/aurora-player/aurora-player/cli/CMakeLists.txt
-  main.cpp
   1>
+  main.cpp
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
   1>Automatic MOC and UIC for target aurora-player
   Building Custom Rule D:/a/aurora-player/aurora-player/app/CMakeLists.txt
@@ -127,7 +127,7 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
      Creating library D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.lib and object D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.exp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 10512 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 10530 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   aurora-player.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-player.exe
   Building Custom Rule D:/a/aurora-player/aurora-player/CMakeLists.txt

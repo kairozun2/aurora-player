@@ -1,43 +1,43 @@
 source: startup-raw.log  (1224 bytes)
 --- first 60 lines ---
-2026-08-11T13:49:50  the application object was created
-2026-08-11T13:49:50  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
-2026-08-11T13:49:50  the player engine is ready
-2026-08-11T13:49:50  loading the interface
-2026-08-11T13:49:50  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-11T13:49:50  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+2026-08-11T13:57:57  the application object was created
+2026-08-11T13:57:57  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
+2026-08-11T13:57:58  the player engine is ready
+2026-08-11T13:57:58  loading the interface
+2026-08-11T13:57:58  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-11T13:57:58  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
 Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
-2026-08-11T13:49:50  interface: qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
-2026-08-11T13:49:50  [warning] qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
-2026-08-11T13:49:50  the interface is loaded and the window is open
-2026-08-11T13:49:50  self test: the application started correctly
-2026-08-11T13:49:50  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-11T13:49:52  Aurora Player is exiting with code 0
+2026-08-11T13:57:59  interface: qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
+2026-08-11T13:57:59  [warning] qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
+2026-08-11T13:57:59  the interface is loaded and the window is open
+2026-08-11T13:57:59  self test: the application started correctly
+2026-08-11T13:57:59  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-11T13:58:00  Aurora Player is exiting with code 0
 --- the 15 most repeated lines ---
-1 x  2026-08-11T13:49:50  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
-1 x  2026-08-11T13:49:50  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-1 x  2026-08-11T13:49:50  [warning] qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
-1 x  2026-08-11T13:49:50  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
-1 x  2026-08-11T13:49:50  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-1 x  2026-08-11T13:49:50  interface: qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
-1 x  2026-08-11T13:49:50  loading the interface
-1 x  2026-08-11T13:49:50  self test: the application started correctly
-1 x  2026-08-11T13:49:50  the application object was created
-1 x  2026-08-11T13:49:50  the interface is loaded and the window is open
-1 x  2026-08-11T13:49:50  the player engine is ready
-1 x  2026-08-11T13:49:52  Aurora Player is exiting with code 0
+1 x  2026-08-11T13:57:57  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
+1 x  2026-08-11T13:57:57  the application object was created
+1 x  2026-08-11T13:57:58  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+1 x  2026-08-11T13:57:58  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+1 x  2026-08-11T13:57:58  loading the interface
+1 x  2026-08-11T13:57:58  the player engine is ready
+1 x  2026-08-11T13:57:59  [warning] qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
+1 x  2026-08-11T13:57:59  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+1 x  2026-08-11T13:57:59  interface: qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
+1 x  2026-08-11T13:57:59  self test: the application started correctly
+1 x  2026-08-11T13:57:59  the interface is loaded and the window is open
+1 x  2026-08-11T13:58:00  Aurora Player is exiting with code 0
 1 x  Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
 --- last 40 lines ---
-2026-08-11T13:49:50  the application object was created
-2026-08-11T13:49:50  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
-2026-08-11T13:49:50  the player engine is ready
-2026-08-11T13:49:50  loading the interface
-2026-08-11T13:49:50  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-11T13:49:50  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
+2026-08-11T13:57:57  the application object was created
+2026-08-11T13:57:57  bundled tools are on PATH: D:\a\aurora-player\aurora-player\dist\tools
+2026-08-11T13:57:58  the player engine is ready
+2026-08-11T13:57:58  loading the interface
+2026-08-11T13:57:58  [warning] qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-11T13:57:58  [warning] QFontDatabase: Cannot find font directory D:/a/aurora-player/aurora-player/dist/lib/fonts.
 Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
-2026-08-11T13:49:50  interface: qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
-2026-08-11T13:49:50  [warning] qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
-2026-08-11T13:49:50  the interface is loaded and the window is open
-2026-08-11T13:49:50  self test: the application started correctly
-2026-08-11T13:49:50  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
-2026-08-11T13:49:52  Aurora Player is exiting with code 0
+2026-08-11T13:57:59  interface: qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
+2026-08-11T13:57:59  [warning] qrc:/qt/qml/Aurora/Main.qml:111:25: Unable to assign QString to QQuickIcon
+2026-08-11T13:57:59  the interface is loaded and the window is open
+2026-08-11T13:57:59  self test: the application started correctly
+2026-08-11T13:57:59  interface: qrc:/qt/qml/Aurora/AuroraSwitch.qml:9:12: Duplicate signal name: invalid override of property change signal or superclass signal
+2026-08-11T13:58:00  Aurora Player is exiting with code 0
