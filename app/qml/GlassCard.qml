@@ -1,7 +1,7 @@
 // Aurora Player - frosted glass container.
 //
 // Drawn with plain Qt Quick primitives only: a rounded, clipped surface with a
-// hairline border and a soft top highlight. No GPU effect module is involved,
+// hairline border and nothing else. No GPU effect module is involved,
 // so the card renders on machines with weak or missing 3D drivers, and a
 // missing effect type can never stop the whole interface from loading.
 import QtQuick
@@ -39,13 +39,6 @@ Item {
         radius: root.radius
         color: root.tint
         clip: true
-
-        // Top highlight: the detail that sells the glass look.
-        Rectangle {
-            width: parent.width
-            height: 1
-            color: Theme.dark ? Qt.rgba(1, 1, 1, 0.22) : Qt.rgba(1, 1, 1, 0.8)
-        }
 
         Item {
             id: contentHost
