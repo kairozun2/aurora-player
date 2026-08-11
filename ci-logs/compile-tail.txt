@@ -70,10 +70,10 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/SettingsView_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/EqualizerPanel_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/QueuePanel_qml.cpp
-  Generating code
   Generating .rcc/qmlcache/aurora-player_qml/LyricsPanel_qml.cpp
-  Previous IPDB not found, fall back to full compilation.
+  Generating code
   Generating .rcc/qmlcache/aurora-player_qml/AddMusicDialog_qml.cpp
+  Previous IPDB not found, fall back to full compilation.
   Generating .rcc/qmlcache/aurora-player_qml/PlayerBar_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/CoverFlow_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/NowPlayingVinyl_qml.cpp
@@ -84,50 +84,4 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/IconButton_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/IconGlyph_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/AuroraButton_qml.cpp
-  All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  Generating .rcc/qmlcache/aurora-player_qml/AuroraSwitch_qml.cpp
-  Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
-  aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
-  Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
-  Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
-  main.cpp
-  PlayerBridge.cpp
-  Models.cpp
-  qrc_qmake_Aurora.cpp
-  aurora-player_qmlcache_loader.cpp
-  Main_qml.cpp
-  Theme_qml.cpp
-  NowPlayingView_qml.cpp
-  LibraryView_qml.cpp
-  SettingsView_qml.cpp
-  EqualizerPanel_qml.cpp
-  QueuePanel_qml.cpp
-  LyricsPanel_qml.cpp
-  AddMusicDialog_qml.cpp
-  PlayerBar_qml.cpp
-  CoverFlow_qml.cpp
-  NowPlayingVinyl_qml.cpp
-  WaveformSeek_qml.cpp
-  VolumeControl_qml.cpp
-  TrackRow_qml.cpp
-  Compiling...
-  GlassCard_qml.cpp
-  IconButton_qml.cpp
-  IconGlyph_qml.cpp
-  AuroraButton_qml.cpp
-  AuroraSwitch_qml.cpp
-  SegmentedControl_qml.cpp
-  SettingsGroup_qml.cpp
-  SettingsRow_qml.cpp
-  qrc_aurora-player_raw_qml_0.cpp
-  qrc_aurora_assets.cpp
-  mocs_compilation_Release.cpp
-  aurora-player_qmltyperegistrations.cpp
-     Creating library D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.lib and object D:/a/aurora-player/aurora-player/build/lib/Release/aurora-player.exp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 10576 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  aurora-player.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-player.exe
-  Building Custom Rule D:/a/aurora-player/aurora-player/CMakeLists.txt
+Attempting to cancel the build...
