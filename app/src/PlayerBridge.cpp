@@ -23,6 +23,8 @@
 #include <algorithm>
 #include <cmath>
 #include <functional>
+#include <thread>
+#include <vector>
 
 namespace aurora {
 namespace {
@@ -76,7 +78,7 @@ bool PlayerBridge::initialize(LibraryModel* library, AlbumModel* albums, QueueMo
         QTimer::singleShot(1200, this, [this, reason] {
             emit errorOccurred(QObject::tr("Silent mode: no audio device available")
                                + (reason.isEmpty() ? QString()
-                                                   : QStringLiteral(" \u2014 ") + reason));
+                                                   : QStringLiteral(" \\u2014 ") + reason));
         });
     }
 
@@ -120,7 +122,7 @@ bool PlayerBridge::initialize(LibraryModel* library, AlbumModel* albums, QueueMo
                 emit libraryChanged();
                 emit notice(ctr("download.ready") + QStringLiteral(": ") + title);
             } else if (failed) {
-                emit errorOccurred(reason.isEmpty() ? title : title + QStringLiteral(" \u2014 ") + reason);
+                emit errorOccurred(reason.isEmpty() ? title : title + QStringLiteral(" \\u2014 ") + reason);
             }
         });
     };
@@ -188,14 +190,25 @@ void PlayerBridge::refreshTrackData() {
     position_ = snapshot.positionSec;
     duration_ = snapshot.durationSec;
 
-    // Waveform: cached per track by the core, so this is cheap after the first call.
+    // Building a waveform decodes the whole file, so it must never run on the
+    // window's thread. The result is dropped if the user already moved on.
     waveform_.clear();
-    Waveform wave;
-    if (controller_.waveformForCurrent(180, &wave) && wave.valid()) {
-        waveform_.reserve(static_cast<int>(wave.peaks.size()));
-        for (const float peak : wave.peaks) waveform_.append(static_cast<double>(peak));
-    }
     emit waveformChanged();
+    const std::string wavePath = snapshot.track.path;
+    if (!wavePath.empty()) {
+        std::thread([this, wavePath] {
+            Waveform wave;
+            if (!controller_.waveformForCurrent(180, &wave) || !wave.valid()) return;
+            const std::vector<float> peaks = wave.peaks;
+            toGui([this, wavePath, peaks] {
+                if (controller_.snapshot().track.path != wavePath) return;
+                waveform_.clear();
+                waveform_.reserve(static_cast<int>(peaks.size()));
+                for (const float peak : peaks) waveform_.append(static_cast<double>(peak));
+                emit waveformChanged();
+            });
+        }).detach();
+    }
 
     lyrics_.clear();
     lyricTimes_.clear();
@@ -340,7 +353,7 @@ QString PlayerBridge::statusLine() const { return qs(controller_.statusLine()); 
 QString PlayerBridge::libraryStats() const {
     Controller& self = const_cast<PlayerBridge*>(this)->controller_;
     const LibraryStats stats = self.library().stats();
-    return QStringLiteral("%1 \u00b7 %2 \u00b7 %3 \u00b7 %4")
+    return QStringLiteral("%1 \\u00b7 %2 \\u00b7 %3 \\u00b7 %4")
             .arg(ctr("library.tracks") + QStringLiteral(": %1").arg(stats.trackCount))
             .arg(ctr("library.albums") + QStringLiteral(": %1").arg(stats.albumCount))
             .arg(ctr("library.artists") + QStringLiteral(": %1").arg(stats.artistCount))
@@ -377,7 +390,7 @@ QVariantList PlayerBridge::toolStatus() const {
 
 QString PlayerBridge::aboutText() const {
     const Settings& settings = controller_.config().settings();
-    return QObject::tr("Aurora Player %1 \u00b7 %2 Hz \u00b7 %3 ch\nOutput: %4\nConfig: %5")
+    return QObject::tr("Aurora Player %1 \\u00b7 %2 Hz \\u00b7 %3 ch\\nOutput: %4\\nConfig: %5")
             .arg(QStringLiteral(AURORA_VERSION_STRING))
             .arg(settings.sampleRate)
             .arg(settings.channels)
@@ -562,21 +575,28 @@ void PlayerBridge::addPath(const QString& pathOrUrl) {
     const QString path = localPath(pathOrUrl).trimmed();
     if (path.isEmpty()) return;
 
-    std::string message;
-    const int added = controller_.add(path.toStdString(), false, &message);
-    if (library_) library_->refresh();
-    if (albums_) albums_->refresh();
-    if (downloads_) downloads_->refresh();
-    emit libraryChanged();
-    emit statusChanged();
+    // Reading tags and walking a folder takes time, so it happens on its own
+    // thread; the window stays responsive and reports the result when ready.
+    const std::string input = path.toStdString();
+    std::thread([this, input, path] {
+        std::string message;
+        const int added = controller_.add(input, false, &message);
+        toGui([this, added, message, path] {
+            if (library_) library_->refresh();
+            if (albums_) albums_->refresh();
+            if (downloads_) downloads_->refresh();
+            emit libraryChanged();
+            emit statusChanged();
 
-    if (added > 0) {
-        emit notice(QObject::tr("%1 tracks").arg(added));
-    } else if (!message.empty()) {
-        emit notice(qs(message));
-    } else {
-        emit errorOccurred(QObject::tr("Nothing to add") + QStringLiteral(": ") + path);
-    }
+            if (added > 0) {
+                emit notice(QObject::tr("%1 tracks").arg(added));
+            } else if (!message.empty()) {
+                emit notice(qs(message));
+            } else {
+                emit errorOccurred(QObject::tr("Nothing to add") + QStringLiteral(": ") + path);
+            }
+        });
+    }).detach();
 }
 
 void PlayerBridge::addFolder(const QString& folder) {
@@ -600,13 +620,19 @@ void PlayerBridge::addUrl(const QString& url) {
     const QString trimmed = url.trimmed();
     if (trimmed.isEmpty()) return;
 
-    std::string message;
-    const int added = controller_.add(trimmed.toStdString(), true, &message);
-    if (library_) library_->refresh();
-    if (downloads_) downloads_->refresh();
-    emit libraryChanged();
-    if (!message.empty()) emit notice(qs(message));
-    else if (added <= 0) emit notice(QObject::tr("Link / YouTube"));
+    // Same rule for links: the window must not wait for the network.
+    const std::string input = trimmed.toStdString();
+    std::thread([this, input] {
+        std::string message;
+        const int added = controller_.add(input, true, &message);
+        toGui([this, added, message] {
+            if (library_) library_->refresh();
+            if (downloads_) downloads_->refresh();
+            emit libraryChanged();
+            if (!message.empty()) emit notice(qs(message));
+            else if (added <= 0) emit notice(QObject::tr("Link / YouTube"));
+        });
+    }).detach();
 }
 
 void PlayerBridge::removeFolder(const QString& folder) {
