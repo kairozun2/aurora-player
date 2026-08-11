@@ -90,6 +90,44 @@ Item {
                         }
                     }
                 }
+
+                SettingsRow {
+                    label: qsTr("Colour theme")
+                    hint: qsTr("Every palette has a dark and a light variant")
+
+                    // Laid out by hand for the same reason as the equalizer
+                    // presets below: a positioner would keep re-measuring.
+                    Item {
+                        id: paletteBox
+
+                        readonly property int columnCount: 4
+                        readonly property int gap: Theme.spacing2
+                        readonly property int cellHeight: 34
+                        readonly property real cellWidth: 100
+                        readonly property int paletteCount: Theme.palettes.length
+                        readonly property int rowCount: Math.ceil(paletteCount / columnCount)
+
+                        implicitWidth: columnCount * cellWidth + (columnCount - 1) * gap
+                        implicitHeight: rowCount * cellHeight + (rowCount - 1) * gap
+
+                        Repeater {
+                            model: Theme.palettes
+
+                            delegate: AuroraButton {
+                                required property var modelData
+                                required property int index
+
+                                text: modelData.name
+                                primary: Theme.paletteIndex === index
+                                width: paletteBox.cellWidth
+                                height: paletteBox.cellHeight
+                                x: (index % paletteBox.columnCount) * (paletteBox.cellWidth + paletteBox.gap)
+                                y: Math.floor(index / paletteBox.columnCount) * (paletteBox.cellHeight + paletteBox.gap)
+                                onClicked: Theme.setPalette(index)
+                            }
+                        }
+                    }
+                }
             }
 
             SettingsGroup {
@@ -223,7 +261,7 @@ Item {
                         spacing: Theme.spacing3
 
                         IconGlyph {
-                            name: "grid"
+                            name: "folder"
                             color: Theme.textMuted
                             implicitWidth: 18
                             implicitHeight: 18
