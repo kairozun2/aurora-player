@@ -71,11 +71,11 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/EqualizerPanel_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/QueuePanel_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/LyricsPanel_qml.cpp
-  Generating .rcc/qmlcache/aurora-player_qml/AddMusicDialog_qml.cpp
-  Generating .rcc/qmlcache/aurora-player_qml/PlayerBar_qml.cpp
   Generating code
-  Generating .rcc/qmlcache/aurora-player_qml/CoverFlow_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/AddMusicDialog_qml.cpp
   Previous IPDB not found, fall back to full compilation.
+  Generating .rcc/qmlcache/aurora-player_qml/PlayerBar_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/CoverFlow_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/NowPlayingVinyl_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/WaveformSeek_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/VolumeControl_qml.cpp
@@ -86,12 +86,12 @@ MSBuild version 18.8.2+ce25c0108 for .NET Framework
   Generating .rcc/qmlcache/aurora-player_qml/AuroraButton_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/AuroraSwitch_qml.cpp
   Generating .rcc/qmlcache/aurora-player_qml/SegmentedControl_qml.cpp
-  Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
-  Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
-  main.cpp
   All 4724 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
+  Generating .rcc/qmlcache/aurora-player_qml/SettingsGroup_qml.cpp
+  Generating .rcc/qmlcache/aurora-player_qml/SettingsRow_qml.cpp
   aurora-cli.vcxproj -> D:\a\aurora-player\aurora-player\build\bin\Release\aurora-cli.exe
+  main.cpp
   PlayerBridge.cpp
   Models.cpp
   qrc_qmake_Aurora.cpp

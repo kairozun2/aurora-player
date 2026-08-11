@@ -21,6 +21,6 @@
 --   CLI player ....... ON
 --   unit tests ....... OFF
 -- 
--- Configuring done (29.4s)
+-- Configuring done (32.2s)
 -- Generating done (0.4s)
 -- Build files have been written to: D:/a/aurora-player/aurora-player/build
