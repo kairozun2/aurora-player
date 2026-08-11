@@ -305,9 +305,16 @@ bool Downloader::runYtDlp(DownloadJob& job) {
     args.push_back("--embed-thumbnail");
     args.push_back("--embed-metadata");
     args.push_back("--add-metadata");
-    if (hasFfmpegTool()) {
+    // yt-dlp reads --ffmpeg-location as a filesystem path. Handing it a bare
+    // command name such as "ffmpeg" makes it report "ffprobe and ffmpeg not
+    // found" even when the tool is perfectly reachable, so the flag is only
+    // passed when the configured value really is a path. Otherwise yt-dlp
+    // searches PATH itself, which is where the bundled tools folder is
+    // registered while the application starts.
+    const auto ffmpegDirEnd = ffmpegPath_.find_last_of("/\\");
+    if (ffmpegDirEnd != std::string::npos) {
         args.push_back("--ffmpeg-location");
-        args.push_back(ffmpegPath_);
+        args.push_back(ffmpegPath_.substr(0, ffmpegDirEnd));
     }
     args.push_back("-o");
     args.push_back(str::joinPath(outputDir, "%(title)s.%(ext)s"));
